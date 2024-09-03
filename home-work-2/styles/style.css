@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    background-color: #ffe2ac;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 10px auto;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.row {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    padding: 20px;
+    background-color: #ffe2ac;
+    border-radius: 24px;
+}
+
+.navigation__link {
+    color: #000;
+    text-decoration: none;
+    transition: .3s ease-in;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.navigation__list-item:hover .navigation__link {
+    color: red;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.main-title {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 34px;
+    text-align: center;
+}
+
+.main-img {
+    width: 400px;
+}
+
+.infobox-label {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.infobox-data {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+.media-info {
+    margin-top: 40px;
+}
+
+.media-info__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.article-text,
+.post_article_text {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.post_article_text em{
+    font-style: italic;
+}
+
+.article-authors-img {
+    width: 755px;
+    margin-top: 20px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.article-subtitle {
+    text-align: center;
+    font-size: 28px;
+}
+
+figure {
+    border: 1px solid #245488;
+    border-radius: 24px;
+    padding: 10px;
+    max-width: 700px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    background: #ffe2ac;
+}
+figure img {
+    max-width: 100%;
+}
+
+figcaption {
+    text-align: center;
+    background-color: #bac8d6;
+}
