@@ -144,7 +144,7 @@
 .article-subtitle {
     text-align: center;
     font-size: 28px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 /*10*/
@@ -168,7 +168,6 @@
     text-align: center;
     background-color: #bac8d6;
 }
-
 /*10*/
 .request-form {
     margin-top: 40px;
@@ -224,5 +223,11 @@
 .request-form__btn:hover{
     color: #fff;
     background-color: #b0cce8;
+}
+/*10*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
 }
 
