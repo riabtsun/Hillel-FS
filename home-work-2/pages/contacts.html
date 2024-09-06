@@ -39,11 +39,73 @@
   <section>
     <div class='container'>
       <div class='row'>
-        <figure>
-          <figcaption>«Хата батьків у с. Кирилівці» (Шевченко, 1843)</figcaption>
-          <img src='../images/Шевченко_Т._Г._Хата_батьків_у_Кирилівці_(1843).jpg' alt='shevchenko house'>
+        <figure class='image-wrap'>
+          <figcaption class='image-wrap__descr'>«Хата батьків у с. Кирилівці» (Шевченко, 1843)</figcaption>
+          <img class='image-wrap__img' src='../images/Шевченко_Т._Г._Хата_батьків_у_Кирилівці_(1843).jpg'
+               alt='shevchenko house'>
         </figure>
-        <i> с. Моринці, Київська губернія, Російська імперія (нині Звенигородський район, Черкаська область, Україна)</i>
+        <i> с. Моринці, Київська губернія, Російська імперія (нині Звенигородський район, Черкаська область,
+          Україна)</i>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class='container'>
+      <div class='row'>
+        <h3 class='article-subtitle'>Розкажіть про себе</h3>
+        <form action='https://fom.in.ua/echo' class='request-form'>
+          <label>
+            <span>Ім'я:</span>
+            <input name='firstname' type='text' placeholder='Тарас' required>
+          </label>
+          <label>
+            <span>Призвіще:</span>
+            <input name='lastname' type='text' placeholder='Шевченко'>
+          </label>
+          <label>
+            <span>Ваш номер телефону</span>
+            <input type='tel' name='userPhone' id='userPhone' placeholder='+380-123-45-67' required>
+          </label>
+          <label>
+            <span>Ваш email</span>
+            <input type="email" name="email" placeholder='hryhorovych@gmail.com' required>
+          </label>
+          <label>
+            <span>Дата вашого народження</span>
+            <input type='date' name='userBirthday' id='userBirthday' required>
+          </label>
+          <label>
+            <span>Скільки творів Шевченка ви прочитали</span>
+            <input type='number' min='0' max='99' value='1'>
+          </label>
+          <label>
+            <span>Улюблені збірки Шевченка</span>
+            <select name='poems' multiple>
+              <option value='Кобзар'>Кобзар</option>
+              <option value='Гайдамаки'>Гайдамаки</option>
+              <option value='Гамалія'>Гамалія</option>
+              <option value='Буквар'>Буквар Южноруській</option>
+            </select>
+          </label>
+          <div class='request-form__radio'>
+            <span>Ваша стать</span>
+            <label>
+              <input type='radio' name='gender' value='female'> Жінка
+            </label>
+            <label>
+              <input type='radio' name='gender' value='other'> Інше
+            </label>
+            <label>
+              <input type='radio' name='gender' value='male' checked>Чоловік
+            </label>
+          </div>
+            <label>
+              <span>За що ви полюбляєте творчість Шевченка?</span>
+              <textarea name='about' id='userText' cols='30' rows='10' maxlength='2000'></textarea>
+            </label>
+            <button class='request-form__btn' type='reset'>Очистити форму</button>
+            <button class='request-form__btn' type='submit'>Відправити</button>
+        </form>
       </div>
     </div>
   </section>
