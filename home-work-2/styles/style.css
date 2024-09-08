@@ -4,7 +4,7 @@
 }
 
 /*10*/
-.paragraph {
+.post__item {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -118,14 +118,14 @@
 }
 
 /*10*/
-.article-text,
-.post_article_text {
+.post__text,
+.post {
     font-weight: 400;
     font-size: 1.2rem;
 }
 
 /*11*/
-.post_article_text em {
+.post em {
     font-style: italic;
 }
 
@@ -136,7 +136,7 @@
 }
 
 /*10*/
-.strong-text {
+.post__text--strong {
     font-weight: bold;
 }
 
