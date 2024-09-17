@@ -1,7 +1,8 @@
 .container {
-    width: min(100% - 40px, 1340px);
+    width: min(100% - 40px, 1800px);
     margin-inline: auto;
     display: flex;
+    flex-direction: column;
     column-gap: 20px;
 }
 table,tr,td {
@@ -14,7 +15,15 @@ table,tr,td {
 table img   {
     vertical-align: middle;
 }
-.mondriaan,
-.mondriaan tr, td {
+.mondriaan {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.mondriaan td {
+    padding: 10px;
+    width: 5px;
+    height: 5px;
     border: 3px solid black;
 }
