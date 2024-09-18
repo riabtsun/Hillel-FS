@@ -1,20 +1,23 @@
 .container {
-    width: min(100% - 40px, 1800px);
+    width: min(100% - 40px, 1340px);
     margin-inline: auto;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     column-gap: 20px;
 }
-table,tr,td {
+
+table, tr, td {
     border-collapse: collapse;
     border: 0;
     padding: 0;
     margin: 0;
 
 }
-table img   {
+
+table img {
     vertical-align: middle;
 }
+
 .mondriaan {
     width: 500px;
     height: 500px;
@@ -26,4 +29,20 @@ table img   {
     width: 5px;
     height: 5px;
     border: 3px solid black;
+}
+
+.main-color {
+    background-color: red;
+}
+
+.secondary-color {
+    background-color: yellow;
+}
+
+.dark-color {
+    background-color: black;
+}
+
+.lonely-color {
+    background-color: blue;
 }
