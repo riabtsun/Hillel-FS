@@ -2,7 +2,6 @@
     width: min(100% - 40px, 1340px);
     margin-inline: auto;
     display: flex;
-    /*flex-direction: column;*/
     column-gap: 20px;
 }
 
