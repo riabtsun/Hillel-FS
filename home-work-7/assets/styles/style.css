@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+.container {
+    width: min(100% - 72px, 1440px);
+    margin-inline: auto;
+    display: flex;
+    padding-top: 0;
+}
+
+.colorized {
+    color: #fe0000;
+}
+
+.btn {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 13px 28px;
+    background-color: #fe0000;
+    border: none;
+    transition: .3s ease-in;
+    cursor: pointer;
+    display: inline-block;
+    width: fit-content;
+}
+
+.btn:hover {
+    transform: scale(0.99);
+    background-color: #b70d0dff;
+}
+
+.header__wrap {
+    display: flex;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    text-decoration: none;
+}
+
+.header__logo-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+}
+
+.header__input {
+    position: relative;
+    width: 350px;
+}
+
+.header__search {
+    border-radius: 70px;
+    border: 1px solid rgba(195, 212, 233, 0.40);
+    padding: 10px 20px 10px 50px;
+    width: 100%;
+}
+
+.header__input-icon {
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+
+.header__search::placeholder {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+    padding-left: 64px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+.nav-list__link {
+    padding: 4px 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    color: black;
+    transition: .3s ease-in;
+}
+
+.nav-list__link:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #000;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.hero {
+    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/car_r8.png');
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.hero__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__text {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+}
+
+.main-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+}
+
+.main-subtitle {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hero__form {
+    background: #080808;
+    padding: 30px 20px;
+    border: 2px solid #ee0000;
+    border-radius: 12px;
+    color: #fff;
+    max-width: 40%;
+}
+
+.hero__form-row {
+    display: flex;
+    justify-content: space-between;
+}
+.hero__form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.hero__form-group:first-child,
+.hero__form-group:nth-child(2) {
+    width: 40%;
+}
+
+.hero__form-group select,
+.hero__form-group input {
+    border: 2px solid #ee0000;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.hero__form-group select,
+.hero__form-group input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+}
+
+.price-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    max-width: 30%;
+}
+
+.hero__form-group--labels {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+input[type="color"] {
+    padding: 0;
+}
+
