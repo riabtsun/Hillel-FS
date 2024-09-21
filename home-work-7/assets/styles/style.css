@@ -15,6 +15,37 @@ body {
     padding-top: 0;
 }
 
+.section-title {
+    color: #fff;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    position: relative;
+    margin: 0;
+}
+
+.section-title:after {
+    content: '';
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 30%;
+    height: 2px;
+}
+
+.suptitle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
 .colorized {
     color: #fe0000;
 }
@@ -31,6 +62,9 @@ body {
     cursor: pointer;
     display: inline-block;
     width: fit-content;
+}
+.btn--rounded {
+    border-radius: 30px;
 }
 
 .btn:hover {
@@ -113,8 +147,8 @@ body {
 }
 
 .nav-list__link:hover {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-text-stroke-width: 1;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     font-size: 18px;
     font-style: normal;
@@ -124,6 +158,7 @@ body {
     background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/car_r8.png');
     background-size: cover;
     padding: 100px 0;
+    border-bottom: 2px solid #fe0000;
 }
 
 .hero__wrap {
@@ -165,6 +200,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
 .hero__form-group {
     display: flex;
     flex-direction: column;
@@ -214,3 +250,50 @@ input[type="color"] {
     padding: 0;
 }
 
+.about {
+    padding: 80px 0;
+}
+
+.about__wrap {
+    padding: 30px;
+    background: #060606;
+    display: flex;
+    column-gap: 40px;
+    border-radius: 24px;
+    width: 100%;
+    justify-content: space-between;
+}
+.about__text {
+    max-width: 100%;
+}
+.about__info {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    color: #fff;
+    margin-top: 30px;
+}
+
+.about__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: fit-content;
+}
+
+.about__card {
+    border: 1px solid #fe0000;
+    border-radius: 12px;
+    width: 320px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.about__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
