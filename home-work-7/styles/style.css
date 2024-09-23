@@ -156,7 +156,7 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/car_r8.png');
+    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../assets/images/car_r8.png');
     background-size: cover;
     padding: 100px 0;
     border-bottom: 2px solid #fe0000;
@@ -329,7 +329,7 @@ input[type="color"] {
 }
 
 .bestsellers {
-    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/porsche.jpg');
+    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../assets/images/porsche.jpg');
     background-size: cover;
     padding: 60px 0;
 }
@@ -504,7 +504,7 @@ input[type="color"] {
 }
 
 .services {
-    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/porsche_dark.jpg');
+    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../assets/images/porsche_dark.jpg');
     padding: 90px 0 55px;
 }
 
@@ -670,5 +670,14 @@ input[type="color"] {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 0;
+}
+
+.user-box__wrapper {
+    display: flex;
+}
+
+.user-box__form {
+    display: flex;
+    flex-direction: column;
 }
 
