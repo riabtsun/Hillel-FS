@@ -336,6 +336,14 @@ input[type="color"] {
 
 .bestsellers__wrap {
     text-align: center;
+    width: 100%;
+}
+
+.bestsellers__cards {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
 }
 
 .bestsellers .suptitle {
@@ -354,14 +362,23 @@ input[type="color"] {
     display: none;
 }
 
+.products__wrap {
+    text-align: center;
+}
 .product-cards {
     display: flex;
 }
 
 .product-card {
-    width: 408px;
+    width: 350px;
     border-radius: 12px;
     background: #fff;
+    transition: .3s ease-in;
+    border: 1px solid #000;
+}
+
+.product-card:hover {
+    box-shadow: 10px 10px 29px 0px rgba(254,0,0,0.72);
 }
 
 .product-card__img {
@@ -369,9 +386,11 @@ input[type="color"] {
 }
 
 .product-card__photo {
-    max-width: 100%;
+    width: 100%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    height: 220px;
+    object-fit: cover;
 }
 
 .product-card__year {
@@ -403,7 +422,77 @@ input[type="color"] {
 }
 
 .product-card__name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     margin-top: 0;
+}
+
+.product-card__sets {
+    display: flex;
+    column-gap: 8px;
+    margin-top: 10px;
+}
+
+.product-card__price {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.product-card__value {
+    background: #000;
+    color: #fe0000;
+    padding: 12px 12px;
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.product-card__btn {
+    background-color: #fe0000;
+    border: none;
+    padding: 12px 12px;
+    width: 50%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.product-card__btn:hover {
+    color: #fe0000;
+    background-color: #d2a8a8;
+}
+
+.products {
+    padding: 80px 0;
+}
+
+.products .suptitle {
+    color: #000;
+    display: block;
+    margin: 0 auto 10px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.products .section-title {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.products__cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 80px;
+    column-gap: 20px;
+    row-gap: 40px;
+    justify-content: center;
 }
