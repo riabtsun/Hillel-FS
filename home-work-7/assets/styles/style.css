@@ -226,7 +226,7 @@ body {
 .hero__form-group input::placeholder {
     font-size: 16px;
     font-weight: 400;
-    line-height:  125%;
+    line-height: 125%;
 }
 
 .price-input {
@@ -346,25 +346,29 @@ input[type="color"] {
     column-gap: 20px;
 }
 
-.bestsellers .suptitle {
+.bestsellers .suptitle,
+.services .suptitle {
     display: block;
     margin: 0 auto 10px;
     text-transform: capitalize;
 }
 
-.bestsellers .section-title {
+.bestsellers .section-title,
+.services .section-title {
     margin: 0 auto;
     text-transform: uppercase;
     font-size: 30px;
 }
 
-.bestsellers .section-title:after {
+.bestsellers .section-title:after,
+.services .section-title:after {
     display: none;
 }
 
 .products__wrap {
     text-align: center;
 }
+
 .product-cards {
     display: flex;
 }
@@ -378,7 +382,7 @@ input[type="color"] {
 }
 
 .product-card:hover {
-    box-shadow: 10px 10px 29px 0px rgba(254,0,0,0.72);
+    box-shadow: 10px 10px 29px 0px rgba(254, 0, 0, 0.72);
 }
 
 .product-card__img {
@@ -472,7 +476,8 @@ input[type="color"] {
     padding: 80px 0;
 }
 
-.products .suptitle {
+.products .suptitle,
+.team .suptitle {
     color: #000;
     display: block;
     margin: 0 auto 10px;
@@ -482,7 +487,8 @@ input[type="color"] {
     line-height: normal;
 }
 
-.products .section-title {
+.products .section-title,
+.team .section-title {
     color: #000;
     text-transform: uppercase;
     font-size: 30px;
@@ -496,3 +502,173 @@ input[type="color"] {
     row-gap: 40px;
     justify-content: center;
 }
+
+.services {
+    background: linear-gradient(rgb(12 12 12 / 80%), rgba(0, 0, 0, 0.5)), url('../images/porsche_dark.jpg');
+    padding: 90px 0 55px;
+}
+
+.services__wrap {
+    text-align: center;
+    width: 100%;
+}
+
+.services__list,
+.team__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    list-style-type: none;
+    margin-top: 40px;
+    padding-left: 0;
+}
+
+.services__list-item {
+    width: 256px;
+    border: 2px solid #fe0000;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.services__list-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.services__list-name {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 22px 0;
+    display: block;
+}
+
+.services__list-item:nth-child(odd) .services__list-name {
+    background-color: #fe0000;
+}
+
+.services__list-item:nth-child(even) .services__list-name {
+    background-color: #000;
+}
+
+.team {
+    padding: 64px 0 54px;
+}
+
+.team__wrap {
+    width: 100%;
+    text-align: center;
+}
+
+.team__list {
+    display: flex;
+    column-gap: 20px;
+}
+
+.team__list-item {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #fe0000;
+}
+
+.team__list-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.footer {
+    padding: 100px 0 0 0;
+    background: #000;
+}
+
+.footer__wrap {
+    display: flex;
+    column-gap: 40px;
+}
+
+.footer__item {
+    width: 400px;
+}
+
+.footer__title {
+    color: #fff;
+    position: relative;
+    font-size: 30px;
+}
+
+.footer__title:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+    bottom: -10px;
+    left: 0;
+}
+
+.footer__text {
+    color: #fff;
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-left: 20px;
+}
+
+.footer__list-item {
+    position: relative;
+}
+
+.footer__list-item a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer__list-item a:hover {
+    color: #fe0000;
+}
+
+.footer__item-input{
+    border: 1px solid #fe0000;
+    padding: 6px 20px;
+}
+
+.footer__list-item:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    left: -20px;
+    top: 8px;
+}
+.footer__item-input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.footer__item-btn {
+    background-color: #fe0000;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 20px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+.footer__copyright {
+    color: #fff;
+    background: #fe0000;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
