@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     width: min(100% - 72px, 1440px);
     margin-inline: auto;
@@ -5,10 +9,10 @@
 
 .wrap {
     border: 3px solid #000;
-    padding: 20px;
+    padding: 1rem;
     width: 100%;
     background: #2c97b6;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
 }
 
 .wrap--float:after {
@@ -17,31 +21,41 @@
     clear: both;
 }
 .wrap__item {
-    height: 200px;
+    height: 13rem;
     border: 1px solid #000;
     width: 288px;
     background: #ee9206;
+    margin: 1rem;
+}
+
+.wrap__item--support {
+    width: 50%;
+}
+.wrap__item--fit {
+    width: fit-content;
+}
+
+.wrap__item--clear {
+    background: none;
+    border: none;
 }
 
 .wrap__item--small{
-    height: 90px;
+    height: 6rem;
+    /*margin: 1rem;*/
 }
 
 .float--left {
     float: left;
-    margin: 10px;
 }
 
 .float--right {
     float: right;
-    margin: 10px;
-
 }
 
 .gap {
-    gap: 20px;
+    gap: 1rem;
 }
-
 
 .flex {
     display: flex;
@@ -53,6 +67,7 @@
 
 .flex--center {
     justify-content: center;
+    align-items: center;
 }
 
 .flex--end {
@@ -60,7 +75,6 @@
 }
 
 .flex--column {
-    display: flex;
     flex-direction: column;
 }
 
@@ -68,8 +82,8 @@
     flex-wrap: wrap;
 }
 
-.flex--stretch {
-    align-items: stretch;
+.flex--wrap {
+    flex-wrap: wrap;
 }
 
 .ml-auto {
@@ -78,6 +92,10 @@
 
 .mr-auto {
     margin-right: auto;
+}
+
+.m-0 {
+    margin: 0;
 }
 
 .clear {
@@ -90,6 +108,15 @@
 
 .clear--right {
     clear: right;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 800px;
 }
 
 
