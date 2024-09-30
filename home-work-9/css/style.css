@@ -1,12 +1,16 @@
-/*RESET*/
+/*VARS*/
+:root {
+    --white-font-color: #fff;
+    --black-color: #000;
+    --blue-color:  #34547a;
+}
 
+/*RESET*/
 * {
     margin: 0;
     padding: 0;
     border: none;
     box-sizing: border-box;
-    /*outline: 1px solid red;*/
-
 }
 
 html {
@@ -19,7 +23,6 @@ body {
 }
 
 /*GENERAL*/
-
 .menu-btn {
     display: flex;
     flex-direction: column;
@@ -31,7 +34,7 @@ body {
     display: inline-block;
     width: 24px;
     height: 2px;
-    background-color: #000;
+    background-color: var(--black-color);
     position: relative;
     cursor: pointer;
     transition: all .3s ease-in;
@@ -75,7 +78,6 @@ h2 {
 }
 
 /*HEADER*/
-
 .header {
     background-color: #eeeff1;
     padding-top: 20px;
@@ -102,7 +104,7 @@ h2 {
 .nav__link {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: var(--black-color);
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -110,7 +112,7 @@ h2 {
 .nav__link:hover,
 .nav__link--active {
     text-decoration: underline;
-    color: #34547a;
+    color:  var(--blue-color);
 }
 
 .design {
@@ -118,6 +120,7 @@ h2 {
     align-items: flex-start;
 }
 
+/*HERO SECTION*/
 .hero__title {
     font-size: 3rem;
     font-weight: 500;
@@ -135,9 +138,9 @@ h2 {
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    color: #fff;
+    color: var(--white-font-color);
     padding: 20px 40px;
-    background: #34547A;
+    background:  var(--blue-color);
     text-transform: uppercase;
     transition: all 0.3s ease-in;
     margin: 0 auto 70px;
@@ -145,11 +148,10 @@ h2 {
 
 .hero__btn:hover {
     background-color: #1b2d42;
-    color: #fff;
+    color: var(--white-font-color);
 }
 
 /*ABOUT*/
-
 .about {
     padding-top: 66px;
     padding-bottom: 50px;
@@ -175,8 +177,8 @@ h2 {
 }
 
 .project {
-    background-color: #34547A;
-    color: #fff;
+    background-color:  var(--blue-color);
+    color: var(--white-font-color);
 }
 
 .project-container {
@@ -204,7 +206,6 @@ h2 {
 }
 
 /*WORK*/
-
 .work {
     color: #eeeff1;
 }
@@ -220,7 +221,7 @@ h2 {
     font-size: 2rem;
     line-height: 2.34rem;
     margin-bottom: 25px;
-    color: #000;
+    color: var(--black-color);
 }
 
 .work-header__text {
@@ -241,14 +242,14 @@ h2 {
 /*FOOTER*/
 
 .footer {
-    background-color: #34547A;
+    background-color:  var(--blue-color);
     padding: 50px 0;
 }
 
 .footer__title {
     font-size: 1.31rem;
     font-weight: 500;
-    color: #fff;
+    color: var(--white-font-color);
     margin-bottom: 20px;
 }
 
@@ -257,7 +258,7 @@ h2 {
     font-style: normal;
     font-weight: 400;
     line-height: 1.64rem;
-    color: #fff;
+    color: var(--white-font-color);
 }
 
 @media screen and (min-width: 600px) {
