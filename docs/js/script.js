@@ -1,20 +1,18 @@
-let minPriceInput = document.querySelector('#minPrice')
-let minRangePrice = document.querySelector('#minRangePrice')
-let maxPriceInput = document.querySelector('#maxPrice')
-let maxRangePrice = document.querySelector('#maxRangePrice')
+let menuBtn = document.querySelector('.menu-btn')
+let navMenu = document.querySelector('.nav')
 
-minPriceInput.value = minRangePrice.value
-maxPriceInput.value = maxRangePrice.value
+menuBtn && menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active')
 
-function syncInputs(rangeInput, numberInput) {
-  rangeInput.addEventListener('input', function() {
-    numberInput.value = this.value
-  })
-  numberInput.addEventListener('input', function() {
-    rangeInput.value = this.value
-  })
-}
+  if (menuBtn.classList.contains('active') && document.documentElement.clientWidth < 992) {
+    navMenu.style.display = 'flex'
+    navMenu.style.flexDirection = 'column'
+  } else {
+    navMenu.style.display = 'none'
+  }
 
-syncInputs(minPriceInput, minRangePrice)
-syncInputs(maxPriceInput, maxRangePrice)
+  if (document.documentElement.clientWidth >= 992) {
+    navMenu.display = 'flex'
+  }
+})
 
