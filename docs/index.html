@@ -9,8 +9,8 @@
   <link
     href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'
     rel='stylesheet'>
-  <link rel='stylesheet' href='css/style.css'>
-  <title>Simple site Templates</title>
+  <link rel='stylesheet' href='styles/main.css'>
+  <title>Simple site Template</title>
 </head>
 
 <body>
@@ -25,13 +25,13 @@
         </div>
         <ul class='nav'>
           <li class='nav__item'>
-            <a href='#' class='nav__link nav__link--active'>Main</a>
+            <a href='#about' class='nav__link nav__link--active'>Main</a>
           </li>
           <li class='nav__item'>
-            <a href='#' class='nav__link'>About author</a>
+            <a href='#project' class='nav__link'>About author</a>
           </li>
           <li class='nav__item'>
-            <a href='#' class='nav__link'>Works</a>
+            <a href='#works' class='nav__link'>Works</a>
           </li>
           <li class='nav__item'>
             <a href='#' class='nav__link'>Process</a>
@@ -51,7 +51,7 @@
       </section>
     </div>
   </header>
-  <section class='about'>
+  <section class='about' id='about'>
     <div class='about-container'>
       <h2 class='about__title'>Обо мне</h2>
       <p class='about__text'>
@@ -60,7 +60,7 @@
       </p>
     </div>
   </section>
-  <div class='project'>
+  <div class='project' id='project'>
     <div class='container'>
       <div class='project-container'>
         <div class='project__item'>
@@ -110,7 +110,7 @@
       </div>
     </div>
   </div>
-  <div class='work'>
+  <div class='work' id='works'>
     <div class='container'>
       <div class='work-header'>
         <h2 class='work-header__title'>Як я працюю</h2>
@@ -121,7 +121,7 @@
       </div>
       <div class='work-video'>
         <div class='video'>
-          <iframe width='560' height='315' src='https://www.youtube.com/embed/riSXyx8B-d4?si=CpxYIdQVpKYN7ncP'
+          <iframe src='https://www.youtube.com/embed/riSXyx8B-d4?si=CpxYIdQVpKYN7ncP'
                   title='YouTube video player'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>

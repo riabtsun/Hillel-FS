@@ -1,0 +1,58 @@
+html
+  font-size: 16px
+
+body
+  font-size: 1rem
+  font-family: 'Roboto', sans-serif
+
+.container
+  width: 90%
+  margin: 0 auto
+  padding: 0 0.3rem
+  @media screen and (min-width: 600px)
+    max-width: 600px
+    padding: 0 3%
+  @media screen and (min-width: 992px)
+    width: 58%
+    max-width: none
+    padding: 0 1%
+
+.menu-btn
+  display: flex
+  flex-direction: column
+  row-gap: 5px
+  padding: 4px
+  @media screen and (min-width: 992px)
+    display: none
+
+.menu-btn__line
+  display: inline-block
+  width: 24px
+  height: 2px
+  background-color: $darkFontColor
+  position: relative
+  cursor: pointer
+  transition: all .3s ease-in
+
+.menu-btn.active .menu-btn__line:first-child
+  transform: rotate(45deg)
+
+.menu-btn.active .menu-btn__line:nth-child(2)
+  display: none
+
+.menu-btn.active .menu-btn__line:nth-child(3)
+  transform: rotate(-45deg)
+  top: -7px
+
+h2
+  text-align: center
+
+.hero__title,
+.about__text
+  font-weight: 500
+
+.nav__link,
+.hero__btn,
+.hero__text,
+.about__text
+  line-height: 1.64rem
