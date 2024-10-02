@@ -1,0 +1,32 @@
+.project
+  background-color: $darkSectionColor
+  color: $lightFontColor
+
+.project-container
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  padding: 50px 0
+  gap: 20px
+  @media screen and (min-width: 600px)
+    padding: 100px 0
+  @media screen and (min-width: 992px)
+    justify-content: space-between
+    padding: 50px 0
+
+.project__item
+  display: flex
+  gap: 20px
+  @media screen and (min-width: 992px)
+    justify-content: center
+    flex-basis: 15%
+
+.project__description
+  display: flex
+  flex-direction: column
+  gap: 10px
+
+.project__number
+  font-size: 1.31rem
+  line-height: 1.54rem

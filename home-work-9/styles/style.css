@@ -176,6 +176,8 @@ h2 {
     text-align: center;
 }
 
+/*PROJECTS*/
+
 .project {
     background-color:  var(--blue-color);
     color: var(--white-font-color);
