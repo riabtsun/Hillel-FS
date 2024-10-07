@@ -31,18 +31,16 @@
     display: flex
   @media screen and (min-width: 1400px)
     gap: 40px
-
-.nav__link 
-  display: block
-  text-decoration: none
-  color: $darkFontColor
-  letter-spacing: 0.1em
-  text-transform: uppercase
-
-.nav__link:hover,
-.nav__link--active 
-  text-decoration: underline
-  color:  $darkSectionColor
+  &__link
+    display: block
+    text-decoration: none
+    color: $darkFontColor
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    &:hover,
+    &--active
+      text-decoration: underline
+      color:  $darkSectionColor
 
 .design 
   flex-direction: column
