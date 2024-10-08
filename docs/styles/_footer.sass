@@ -1,16 +1,15 @@
+@use "styles-forwarded"
+
 .footer
-  background-color: $darkSectionColor
+  background-color: styles-forwarded.$darkSectionColor
   padding: 50px 0
-
-.footer__title
-  font-size: 1.31rem
-  font-weight: 500
-  color: $lightFontColor
-  margin-bottom: 20px
-
-.footer__copyright
-  font-size: 0.8rem
-  font-style: normal
-  font-weight: 400
-  line-height: 1.64rem
-  color: $lightFontColor
+  &__title
+    @include styles-forwarded.fontSettings(1.31rem, 500)
+    color: styles-forwarded.$lightFontColor
+    margin-bottom: 20px
+  &__copyright
+    @include styles-forwarded.fontSettings(0.8rem, 400)
+    font-size: 0.8rem
+    font-weight: 400
+    color: styles-forwarded.$lightFontColor
+    @extend %defaultLineHeight

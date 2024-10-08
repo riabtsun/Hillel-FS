@@ -1,13 +1,14 @@
-.header 
-  background-color: $mainSectionBg
+@use "styles-forwarded"
+
+.header
+  background-color: styles-forwarded.$mainSectionBg
   padding-top: 20px
   @media screen and (min-width: 600px)
     padding-top: 20px
 
-.navbar 
+.navbar
   margin-bottom: 60px
-  display: flex
-  flex-direction: column
+  @include styles-forwarded.flexSettings($direction: column)
   align-items: end
   gap: 20px
   @media screen and (min-width: 600px)
@@ -15,7 +16,7 @@
   @media screen and (min-width: 992px)
     align-items: start
 
-.nav 
+.nav
   list-style: none
   display: none
   flex-direction: column
@@ -32,18 +33,18 @@
   @media screen and (min-width: 1400px)
     gap: 40px
 
-.nav__link 
-  display: block
-  text-decoration: none
-  color: $darkFontColor
-  letter-spacing: 0.1em
-  text-transform: uppercase
+  &__link
+    display: block
+    text-decoration: none
+    color: styles-forwarded.$darkFontColor
+    letter-spacing: 0.1em
+    text-transform: uppercase
 
-.nav__link:hover,
-.nav__link--active 
-  text-decoration: underline
-  color:  $darkSectionColor
+    &:hover,
+    &--active
+      text-decoration: underline
+      color: styles-forwarded.$darkSectionColor
 
-.design 
-  flex-direction: column
+.design
+  @include styles-forwarded.flexSettings($direction: column)
   align-items: flex-start

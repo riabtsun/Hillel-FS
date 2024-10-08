@@ -1,9 +1,23 @@
+@use "styles-forwarded"
+
 .project
-  background-color: $darkSectionColor
-  color: $lightFontColor
+  background-color: styles-forwarded.$darkSectionColor
+  color: styles-forwarded.$lightFontColor
+  &__item
+    display: flex
+    gap: 20px
+    @media screen and (min-width: 992px)
+      justify-content: center
+      flex-basis: 15%
+  &__description
+    @include styles-forwarded.flexSettings($direction: column)
+    gap: 10px
+  &__number
+    font-size: 1.31rem
+    @extend %defaultLineHeight
 
 .project-container
-  display: flex
+  @include styles-forwarded.flexSettings($direction: row)
   flex-wrap: wrap
   justify-content: space-between
   align-items: center
@@ -14,19 +28,3 @@
   @media screen and (min-width: 992px)
     justify-content: space-between
     padding: 50px 0
-
-.project__item
-  display: flex
-  gap: 20px
-  @media screen and (min-width: 992px)
-    justify-content: center
-    flex-basis: 15%
-
-.project__description
-  display: flex
-  flex-direction: column
-  gap: 10px
-
-.project__number
-  font-size: 1.31rem
-  line-height: 1.54rem
