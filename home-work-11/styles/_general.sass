@@ -1,3 +1,5 @@
+@use "styles-forwarded"
+
 html
   font-size: 16px
 
@@ -18,8 +20,7 @@ body
     padding: 0 1%
 
 .menu-btn
-  display: flex
-  flex-direction: column
+  @include styles-forwarded.flexSettings($direction: column)
   row-gap: 5px
   padding: 4px
   @media screen and (min-width: 992px)
@@ -29,7 +30,7 @@ body
   display: inline-block
   width: 24px
   height: 2px
-  background-color: $darkFontColor
+  background-color: styles-forwarded.$darkFontColor
   position: relative
   cursor: pointer
   transition: all .3s ease-in
@@ -55,4 +56,4 @@ h2
 .hero__btn,
 .hero__text,
 .about__text
-  line-height: 1.64rem
+  @extend %defaultLineHeight

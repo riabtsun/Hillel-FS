@@ -1,3 +1,10 @@
+.footer__copyright, .work-header__text, .project__number, .nav__link,
+.hero__btn,
+.hero__text,
+.about__text {
+  line-height: 1.64rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -81,13 +88,6 @@ h2 {
   font-weight: 500;
 }
 
-.nav__link,
-.hero__btn,
-.hero__text,
-.about__text {
-  line-height: 1.64rem;
-}
-
 .header {
   background-color: #eeeff1;
   padding-top: 20px;
@@ -155,6 +155,7 @@ h2 {
 }
 
 .design {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -268,11 +269,11 @@ h2 {
 }
 .project__number {
   font-size: 1.31rem;
-  line-height: 1.54rem;
 }
 
 .project-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -318,6 +319,7 @@ h2 {
 }
 .work-header__title {
   font-size: 2rem;
+  font-weight: 500;
   line-height: 2.34rem;
   margin-bottom: 25px;
   color: #000;
@@ -334,7 +336,6 @@ h2 {
 }
 .work-header__text {
   color: #727272;
-  line-height: 1.64rem;
 }
 
 .work-video {
@@ -364,14 +365,16 @@ h2 {
 .footer__title {
   font-size: 1.31rem;
   font-weight: 500;
+  line-height: normal;
   color: #fff;
   margin-bottom: 20px;
 }
 .footer__copyright {
   font-size: 0.8rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: 1.64rem;
+  line-height: normal;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: #fff;
 }
 

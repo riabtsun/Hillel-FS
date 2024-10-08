@@ -1,6 +1,8 @@
+@use "styles-forwarded"
+
 .about
   padding: 66px 0 50px 0
-  background-color: $secondarySectionBg
+  background-color: styles-forwarded.$secondarySectionBg
   @media screen and (min-width: 600px)
     padding: 112px 0 100px 0
   @media screen and (min-width: 992px)
@@ -14,9 +16,7 @@
     @media screen and (min-width: 992px)
       margin-bottom: 40px
   &__title
-    font-size: 2rem
-    font-weight: 500
-    line-height: 3.92rem
+    @include styles-forwarded.fontSettings(2rem, 500, 3.92rem)
     margin-bottom: 30px
     @media screen and (min-width: 600px)
       margin-bottom: 100px

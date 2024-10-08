@@ -1,6 +1,8 @@
+@use "styles-forwarded"
+
 .project
-  background-color: $darkSectionColor
-  color: $lightFontColor
+  background-color: styles-forwarded.$darkSectionColor
+  color: styles-forwarded.$lightFontColor
   &__item
     display: flex
     gap: 20px
@@ -8,15 +10,14 @@
       justify-content: center
       flex-basis: 15%
   &__description
-    display: flex
-    flex-direction: column
+    @include styles-forwarded.flexSettings($direction: column)
     gap: 10px
   &__number
     font-size: 1.31rem
-    line-height: 1.54rem
+    @extend %defaultLineHeight
 
 .project-container
-  display: flex
+  @include styles-forwarded.flexSettings($direction: row)
   flex-wrap: wrap
   justify-content: space-between
   align-items: center

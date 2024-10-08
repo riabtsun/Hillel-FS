@@ -1,7 +1,7 @@
-.hero__title 
-  font-size: 3rem
-  font-weight: 500
-  line-height: 4.92rem
+@use "styles-forwarded"
+
+.hero__title
+  @include styles-forwarded.fontSettings(3rem, 500, 4.92rem)
   margin-bottom: 60px
 
 .hero__text 
@@ -15,9 +15,9 @@
   display: inline-block
   text-align: center
   text-decoration: none
-  color: $lightFontColor
+  color: styles-forwarded.$lightFontColor
   padding: 20px 40px
-  background:  $darkSectionColor
+  background:  styles-forwarded.$darkSectionColor
   text-transform: uppercase
   transition: all 0.3s ease-in
   margin: 0 auto 70px
@@ -25,5 +25,5 @@
     margin: 0 auto 140px
   &:hover
     background-color: #1b2d42
-    color: $lightFontColor
+    color: styles-forwarded.$lightFontColor
 

@@ -1,5 +1,7 @@
+@use "styles-forwarded"
+
 .work
-  color: $mainSectionBg
+  color: styles-forwarded.$mainSectionBg
 
 .work-header
   max-width: 600px
@@ -13,17 +15,16 @@
   @media screen and (min-width: 1400px)
     padding: 112px 3% 60px
   &__title
-    font-size: 2rem
-    line-height: 2.34rem
+    @include styles-forwarded.fontSettings(2rem, 500, 2.34rem)
     margin-bottom: 25px
-    color: $darkFontColor
+    color: styles-forwarded.$darkFontColor
     @media screen and (min-width: 600px)
       margin-bottom: 50px
     @media screen and (min-width: 992px)
       margin-bottom: 40px
   &__text
     color: #727272
-    line-height: 1.64rem
+    @extend %defaultLineHeight
 
 .work-video
   max-width: 100%
