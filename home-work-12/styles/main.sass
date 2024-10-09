@@ -1,0 +1,94 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.body
+  padding: 50px
+  background: #adecea
+  width: 100vw
+  height: 100vh
+  padding: 50px
+//.container
+//  width: 90%
+//  margin: 0 auto
+//  padding: 1rem
+//  height: 100vh
+//  background: #adecea
+//  overflow: hidden
+
+
+.sun
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  position: relative
+  top: calc(100% - 300px)
+  background: #dccf42 url("../imgs/smile1.svg") no-repeat 30px 60px
+  background-size: 80%
+  border: 3px dashed orange
+  transition: all 1s ease
+  animation: 5s linear infinite sunRoad
+  z-index: -1
+  &:before
+    content: ''
+    position: absolute
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: #000
+    border: 5px solid #fff
+    top: 60px
+    left: 40px
+  &:after
+    content: ''
+    position: absolute
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: #000
+    border: 5px solid #fff
+    top: 60px
+    right: 40px
+  &:hover
+    transform: rotate(360deg)
+  li
+    list-style-type: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 10px
+    width: 250px
+    background: #dccf42
+    box-shadow: 0 0 15px rgb(220, 207, 66)
+    &:nth-child(1)
+      transform: translate(-50%, -50%) rotate(0deg)
+    &:nth-child(2)
+      transform: translate(-50%, -50%) rotate(90deg)
+    &:nth-child(3)
+      transform: translate(-50%, -50%) rotate(45deg)
+    &:nth-child(4)
+      transform: translate(-50%, -50%) rotate(-45deg)
+    &:nth-child(5)
+      transform: translate(-50%, -50%) rotate(22.5deg)
+    &:nth-child(6)
+      transform: translate(-50%, -50%) rotate(-22.5deg)
+    &:nth-child(7)
+      transform: translate(-50%, -50%) rotate(-67.5deg)
+    &:nth-child(8)
+      transform: translate(-50%, -50%) rotate(67.5deg)
+  //scale, translate, skew
+
+@keyframes sunRoad
+  0%,
+  100%
+    top: calc(100% - 300px)
+  20%
+    top: calc(100% - 500px)
+  40%
+    top: calc(100% - 600px)
+  60%
+    top: calc(100% - 700px)
+  80%
+    top: calc(100% - 800px)
