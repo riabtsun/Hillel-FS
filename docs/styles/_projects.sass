@@ -8,7 +8,9 @@
     gap: 20px
     @media screen and (min-width: 992px)
       justify-content: center
-      flex-basis: 15%
+      flex-basis: 25%
+    @media screen and (min-width: 1800px)
+      flex-basis: auto
   &__description
     @include styles-forwarded.flexSettings($direction: column)
     gap: 10px
@@ -28,3 +30,7 @@
   @media screen and (min-width: 992px)
     justify-content: space-between
     padding: 50px 0
+  @media screen and (min-width: 1400px)
+    column-gap: 25px
+  @media screen and (min-width: 1900px)
+      column-gap: 45px

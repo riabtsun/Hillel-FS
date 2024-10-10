@@ -154,6 +154,16 @@ h2 {
   color: #34547a;
 }
 
+.nav.active {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .nav.active {
+    flex-direction: row;
+  }
+}
+
 .design {
   display: flex;
   flex-direction: column;
@@ -259,7 +269,12 @@ h2 {
 @media screen and (min-width: 992px) {
   .project__item {
     justify-content: center;
-    flex-basis: 15%;
+    flex-basis: 25%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .project__item {
+    flex-basis: auto;
   }
 }
 .project__description {
@@ -289,6 +304,16 @@ h2 {
   .project-container {
     justify-content: space-between;
     padding: 50px 0;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .project-container {
+    column-gap: 25px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .project-container {
+    column-gap: 45px;
   }
 }
 
