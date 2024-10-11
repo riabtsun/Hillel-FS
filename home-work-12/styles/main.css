@@ -6,10 +6,21 @@
 
 .body {
   padding: 50px;
-  background: #adecea;
   width: 100vw;
   height: 100vh;
-  padding: 50px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  height: 100vh;
+  background: #adecea;
+  overflow: hidden;
+}
+
+.sun-wrap:hover {
+  transform: rotate(360deg);
 }
 
 .sun {
@@ -17,13 +28,14 @@
   height: 200px;
   border-radius: 50%;
   position: relative;
-  top: calc(100% - 300px);
-  background: #dccf42 url("../imgs/smile1.svg") no-repeat 30px 60px;
-  background-size: 80%;
-  border: 3px dashed orange;
+  background: #dccf42 url("../imgs/smile1.svg") no-repeat 48px 76px;
+  background-size: 60%;
+  box-shadow: 0 0 20px 15px #dccf42;
+  border: 3px dashed #e7d72b;
   transition: all 1s ease;
-  animation: 5s linear infinite sunRoad;
-  z-index: -1;
+  animation: 5s linear infinite alternate sunRoad;
+  margin: 50px;
+  cursor: pointer;
 }
 .sun:before {
   content: "";
@@ -55,52 +67,115 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   height: 10px;
-  width: 250px;
-  background: #dccf42;
+  width: 50px;
+  background: transparent;
   box-shadow: 0 0 15px #dccf42;
 }
 .sun li:nth-child(1) {
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -110px) rotate(90deg);
 }
 .sun li:nth-child(2) {
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(15px, -103px) rotate(-67.5deg);
 }
 .sun li:nth-child(3) {
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(100%, -80px) rotate(-45deg);
 }
 .sun li:nth-child(4) {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(75px, -45px) rotate(-22.5deg);
 }
 .sun li:nth-child(5) {
-  transform: translate(-50%, -50%) rotate(22.5deg);
+  transform: translate(80px, -50%);
 }
 .sun li:nth-child(6) {
-  transform: translate(-50%, -50%) rotate(-22.5deg);
+  transform: translate(75px, 30px) rotate(22.5deg);
 }
 .sun li:nth-child(7) {
-  transform: translate(-50%, -50%) rotate(-67.5deg);
+  transform: translate(56px, 63px) rotate(45deg);
 }
 .sun li:nth-child(8) {
-  transform: translate(-50%, -50%) rotate(67.5deg);
+  transform: translate(22px, 90px) rotate(67.5deg);
+}
+.sun li:nth-child(9) {
+  transform: translate(-50%, 100px) rotate(90deg);
+}
+.sun li:nth-child(10) {
+  transform: translate(-66px, 94px) rotate(-67.5deg);
+}
+.sun li:nth-child(11) {
+  transform: translate(-100px, 72px) rotate(-45deg);
+}
+.sun li:nth-child(12) {
+  transform: translate(-120px, 38px) rotate(-22.5deg);
+}
+.sun li:nth-child(13) {
+  transform: translate(-128px, -50%);
+}
+.sun li:nth-child(14) {
+  transform: translate(-120px, -50px) rotate(22.5deg);
+}
+.sun li:nth-child(15) {
+  transform: translate(-100px, -84px) rotate(45deg);
+}
+.sun li:nth-child(16) {
+  transform: translate(-66px, -104px) rotate(67.5deg);
+}
+
+.cloud {
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 150px);
+  z-index: 3;
+}
+.cloud:before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 50px;
+  bottom: 0;
 }
 
 @keyframes sunRoad {
-  0%, 100% {
-    top: calc(100% - 300px);
+  0% {
+    left: 0;
+    top: 10px;
+  }
+  10% {
+    left: 10%;
   }
   20% {
-    top: calc(100% - 500px);
+    left: 20%;
+  }
+  30% {
+    left: 30%;
   }
   40% {
-    top: calc(100% - 600px);
+    left: 40%;
+  }
+  50% {
+    left: calc(50% - 100px);
+    transform: scale(0.5);
   }
   60% {
-    top: calc(100% - 700px);
+    left: 60%;
+  }
+  70% {
+    left: 70%;
   }
   80% {
-    top: calc(100% - 800px);
+    left: 80%;
+  }
+  90% {
+    left: 90%;
+  }
+  100% {
+    left: 100%;
   }
 }
 
