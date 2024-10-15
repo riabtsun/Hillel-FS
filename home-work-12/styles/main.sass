@@ -3,143 +3,207 @@
   padding: 0
   box-sizing: border-box
 
-.body
-  padding: 50px
-  width: 100vw
+.morning
   height: 100vh
-.container
-  width: 90%
-  margin: 0 auto
-  padding: 1rem
-  height: 100vh
-  background: #adecea
-  overflow: hidden
-  //z-index: 1
-
-.sun-wrap:hover
-  transform: rotate(360deg)
-
-
-.sun
-  width: 200px
-  height: 200px
-  border-radius: 50%
+  background: rgb(0,21,49)
+  margin: auto
+  font-size: 13px
   position: relative
-  background: #dccf42 url("../imgs/smile1.svg") no-repeat 48px 76px
-  background-size: 60%
-  box-shadow: 0 0 20px 15px #dccf42
-  border: 3px dashed #e7d72b
-  transition: all 1s ease
-  animation: 5s linear infinite alternate sunRoad
-  //z-index: 1
-  margin: 50px
-  cursor: pointer
+  overflow: hidden
+  animation: sky 10s linear forwards 9s
+  background: url("../imgs/snow.png")
   &:before
     content: ''
-    position: absolute
-    width: 15px
-    height: 15px
-    border-radius: 50%
-    background-color: #000
-    border: 5px solid #fff
-    top: 60px
-    left: 40px
-  &:after
-    content: ''
-    position: absolute
-    width: 15px
-    height: 15px
-    border-radius: 50%
-    background-color: #000
-    border: 5px solid #fff
-    top: 60px
-    right: 40px
-  &:hover
-    transform: rotate(360deg)
-  li
-    list-style-type: none
-    position: absolute
-    top: 50%
-    left: 50%
-    height: 10px
-    width: 50px
-    background: transparent
-    box-shadow: 0 0 15px rgb(220, 207, 66)
-    &:nth-child(1)
-      transform: translate(-50%, -110px) rotate(90deg)
-    &:nth-child(2)
-      transform: translate(15px, -103px) rotate(-67.5deg)
-    &:nth-child(3)
-      transform: translate(100%, -80px) rotate(-45deg)
-    &:nth-child(4)
-      transform: translate(75px, -45px) rotate(-22.5deg)
-    &:nth-child(5)
-      transform: translate(80px, -50%)
-    &:nth-child(6)
-      transform: translate(75px, 30px) rotate(22.5deg)
-    &:nth-child(7)
-      transform: translate(56px, 63px) rotate(45deg)
-    &:nth-child(8)
-      transform: translate(22px, 90px) rotate(67.5deg)
-    &:nth-child(9)
-      transform: translate(-50%, 100px) rotate(90deg)
-    &:nth-child(10)
-      transform: translate(-66px, 94px) rotate(-67.5deg)
-    &:nth-child(11)
-      transform: translate(-100px, 72px) rotate(-45deg)
-    &:nth-child(12)
-      transform: translate(-120px, 38px) rotate(-22.5deg)
-    &:nth-child(13)
-      transform: translate(-128px,-50%)
-    &:nth-child(14)
-      transform: translate(-120px,-50px) rotate(22.5deg)
-    &:nth-child(15)
-      transform: translate(-100px,-84px) rotate(45deg)
-    &:nth-child(16)
-      transform: translate(-66px,-104px) rotate(67.5deg)
-  //scale, translate, skew
-
-.cloud
-  width: 250px
-  height: 250px
-  background-color: #fff
-  border-radius: 50%
-  position: absolute
-  left: calc(50% - 150px)
-  z-index: 3
-  &:before
-    content: ""
     position: absolute
     width: 150px
     height: 150px
     border-radius: 50%
-    background-color: #fff
-    left: 50px
-    bottom: 0
-
-@keyframes sunRoad
-  0%
-    left: 0
-    top: 10px
-  10%
-    left: 10%
-  20%
-    left: 20%
-  30%
-    left: 30%
-  40%
-    left: 40%
-  50%
-    left: calc(50% - 100px)
-    transform: scale(0.5)
-  60%
-    left: 60%
-  70%
+    top: 100%
     left: 70%
+    background: rgb(255,244,206) url('../imgs/face.png') center no-repeat
+    background-size: 50%
+    box-shadow: 0 0 40px wheat
+    animation: sun 12s linear forwards 12s
+  &:after
+    content: ''
+    position: absolute
+    width: 100px
+    height: 100px
+    border-radius: 50%
+    top: 0
+    left: 50%
+    transform: translate(35%, -100%)
+    background: #fcfcfc
+    box-shadow: 0 0 30px #d3e6ff
+    z-index: 1
+    animation: moon 13s linear forwards
+
+.cover
+  position: relative
+  width: 100%
+  height: 100%
+  background: url('../imgs/starsky.png') no-repeat
+  -webkit-background-size: cover
+  background-size: cover
+  animation: night 13s linear forwards
+
+.below
+  position: absolute
+  width: 100%
+  bottom: 0
+  left: 0
+  height: 60vh
+  background: url('../imgs/mountains2.png') repeat top
+  background-size: cover
+  z-index: 2
+  animation: mountains 120s linear infinite
+
+.decor__item
+  position: absolute
+  z-index: 3
+  width: 500px
+  bottom: -9%
+
+.plane
+  width: 160px
+  position: absolute
+  top: 30%
+  left: -36%
+  animation: plane 15s linear forwards infinite 16s
+  transform: scaleX(-1)
+  transition: rotate .3s
+  &:hover
+    transform: rotate(180deg)
+
+
+.cloud-1
+  position: absolute
+  top: -23%
+  left: 21%
+  width: 230px
+  height: 230px
+  animation: cloud 8s linear forwards 18s
+  z-index: 5
+  transition: all .3s
+  &:hover
+    transform: skewX(20deg) scale(1.3)
+
+.cloud-2
+  position: absolute
+  top: -20%
+  left: 43%
+  width: 200px
+  height: 200px
+  animation: cloud-2 8s linear forwards 18s
+  z-index: 5
+  transition: all .3s
+  &:hover
+    transform: skewX(-20deg) scale(1.3)
+
+.cloud-3
+  position: absolute
+  top: -23%
+  left: 64%
+  width: 230px
+  height: 230px
+  animation: cloud-3 8s linear forwards 18s
+  z-index: 5
+  transition: all .3s
+  &:hover
+    transform: skewX(20deg) scale(1.3)
+
+
+@keyframes cloud
+  70%
+    top: 19%
+    left: 35%
   80%
-    left: 80%
-  90%
-    left: 90%
+    top: 19%
+    left: 35%
   100%
+    top: 14%
+    left: 19%
+
+@keyframes cloud-2
+  70%
+    top: 20%
+    left: 43%
+  80%
+    top: 20%
+    left: 43%
+  100%
+    top: 34%
+    left: 43%
+
+@keyframes cloud-3
+  70%
+    top: 19%
+    left: 50%
+  80%
+    top: 19%
+    left: 50%
+  100%
+    top: 14%
+    left: 64%
+
+@keyframes sky
+  20%
+    background: rgb(1,31,70) 0 0
+  40%
+    background: rgb(3,52,116)
+  60%
+    background: rgb(11,81,172)
+  80%
+    background: rgb(34,111,212)
+  100%
+    background: rgb(75,153,255) 100px 10000px
+
+@keyframes moon
+  100%
+    top: 100%
+    left: 0
+
+@keyframes sun
+  0%
+    background: tomato
+    box-shadow: none
+  20%
+    background: rgb(255,109,83)
+  30%
+    background: rgb(255,109,83)
+    box-shadow: 0 0 10px rgb(255,160,184)
+  50%
+    background: rgb(255,244,206)
+    box-shadow: 0 0 40px wheat
+  60%
+    background: rgb(255,244,206)
+    box-shadow: 0 0 40px wheat
+  80%
+    background: rgb(255,247,220)
+    box-shadow: 0 0 50px wheat, 0 0 60px wheat
+  100%
+    left: 35%
+    top: 15%
+
+@keyframes night
+  20%
+    opacity: 1
+  40%
+    opacity: .9
+  60%
+    opacity: .7
+  80%
+    opacity: .5
+  100%
+    opacity: 0
+
+@keyframes plane
+  to
+    top: 30px
     left: 100%
 
+@keyframes mountains
+  0%
+    background-position-x: 0
+  100%
+    background-position: 3223px
