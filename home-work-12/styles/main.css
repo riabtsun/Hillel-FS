@@ -6,7 +6,7 @@
 
 .morning {
   height: 100vh;
-  background: rgb(0, 21, 49);
+  background: #001531;
   margin: auto;
   font-size: 13px;
   position: relative;
@@ -22,7 +22,7 @@
   border-radius: 50%;
   top: 100%;
   left: 70%;
-  background: rgb(255, 244, 206) url("../imgs/face.png") center no-repeat;
+  background: #fff4ce url("../imgs/face.png") center no-repeat;
   background-size: 50%;
   box-shadow: 0 0 40px wheat;
   animation: sun 12s linear forwards 12s;
@@ -170,19 +170,19 @@
 }
 @keyframes sky {
   20% {
-    background: rgb(1, 31, 70) 0 0;
+    background: #011f46 0 0;
   }
   40% {
-    background: rgb(3, 52, 116);
+    background: #033474;
   }
   60% {
-    background: rgb(11, 81, 172);
+    background: #0b51ac;
   }
   80% {
-    background: rgb(34, 111, 212);
+    background: #226fd4;
   }
   100% {
-    background: rgb(75, 153, 255) 100px 10000px;
+    background: #4b99ff 100px 10000px;
   }
 }
 @keyframes moon {
@@ -197,22 +197,22 @@
     box-shadow: none;
   }
   20% {
-    background: rgb(255, 109, 83);
+    background: #ff6d53;
   }
   30% {
-    background: rgb(255, 109, 83);
-    box-shadow: 0 0 10px rgb(255, 160, 184);
+    background: #ff6d53;
+    box-shadow: 0 0 10px #ffa0b8;
   }
   50% {
-    background: rgb(255, 244, 206);
+    background: #fff4ce;
     box-shadow: 0 0 40px wheat;
   }
   60% {
-    background: rgb(255, 244, 206);
+    background: #fff4ce;
     box-shadow: 0 0 40px wheat;
   }
   80% {
-    background: rgb(255, 247, 220);
+    background: #fff7dc;
     box-shadow: 0 0 50px wheat, 0 0 60px wheat;
   }
   100% {
