@@ -1,0 +1,24 @@
+.square {
+    animation: move 5s infinite linear;
+    fill: orange;
+}
+
+.square rect {
+    animation: colorize 5s infinite linear;
+    fill: red;
+    stroke: green;
+}
+
+@keyframes move {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorize {
+    to{
+        fill: green;
+        stroke: red;
+    }
+
+}
