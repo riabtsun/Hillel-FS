@@ -11,9 +11,8 @@
   position: relative
   overflow: hidden
   animation: sky 10s linear forwards 9s
-  background: url("../imgs/snow.png")
-  &:before
-    content: ''
+  transition: all .3s
+  .sun
     position: absolute
     width: 150px
     height: 150px
@@ -24,6 +23,10 @@
     background-size: 50%
     box-shadow: 0 0 40px wheat
     animation: sun 12s linear forwards 12s
+    transition: all 3s
+    z-index: 4
+    &:hover
+      transform: rotate(360deg)
   &:after
     content: ''
     position: absolute
@@ -55,12 +58,12 @@
   height: 60vh
   background: url('../imgs/mountains2.png') repeat top
   background-size: cover
-  z-index: 2
+  z-index: 5
   animation: mountains 120s linear infinite
 
 .decor__item
   position: absolute
-  z-index: 3
+  z-index: 6
   width: 500px
   bottom: -9%
 
@@ -71,9 +74,10 @@
   left: -36%
   animation: plane 15s linear forwards infinite 16s
   transform: scaleX(-1)
-  transition: rotate .3s
+  transition: all 1s
+  z-index: 7
   &:hover
-    transform: rotate(180deg)
+    transform: rotate(180deg) scaleX(1)
 
 
 .cloud-1
@@ -83,7 +87,7 @@
   width: 230px
   height: 230px
   animation: cloud 8s linear forwards 18s
-  z-index: 5
+  z-index: 8
   transition: all .3s
   &:hover
     transform: skewX(20deg) scale(1.3)
@@ -98,7 +102,7 @@
   z-index: 5
   transition: all .3s
   &:hover
-    transform: skewX(-20deg) scale(1.3)
+    transform: skewX(-20deg) scale(1.3) translate(-20px,40px)
 
 .cloud-3
   position: absolute
@@ -110,7 +114,7 @@
   z-index: 5
   transition: all .3s
   &:hover
-    transform: skewX(20deg) scale(1.3)
+    transform: skewX(20deg) scale(1.3)   translate(65px,-40px)
 
 
 @keyframes cloud
@@ -165,21 +169,21 @@
 
 @keyframes sun
   0%
-    background: tomato
     box-shadow: none
+    background: tomato url('../imgs/face.png') center no-repeat
   20%
-    background: rgb(255,109,83)
+    background: rgb(255,109,83) url('../imgs/face.png')
   30%
-    background: rgb(255,109,83)
+    background: rgb(255,109,83) url('../imgs/face.png') center no-repeat
     box-shadow: 0 0 10px rgb(255,160,184)
   50%
-    background: rgb(255,244,206)
+    background: rgb(255,244,206) url('../imgs/face.png') center no-repeat
     box-shadow: 0 0 40px wheat
   60%
-    background: rgb(255,244,206)
+    background: rgb(255,244,206) url('../imgs/face.png') center no-repeat
     box-shadow: 0 0 40px wheat
   80%
-    background: rgb(255,247,220)
+    background: rgb(255,247,220) url('../imgs/face.png') center no-repeat
     box-shadow: 0 0 50px wheat, 0 0 60px wheat
   100%
     left: 35%
