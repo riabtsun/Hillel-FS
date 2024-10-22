@@ -202,41 +202,22 @@
     background: tomato url("../imgs/face.png") center no-repeat;
   }
   20% {
-
-    background: rgb(255, 109, 83) url("../imgs/face.png");
+    background: #ff6d53 url("../imgs/face.png");
   }
   30% {
-    background: rgb(255, 109, 83) url("../imgs/face.png") center no-repeat;
-    box-shadow: 0 0 10px rgb(255, 160, 184);
-  }
-  50% {
-    background: rgb(255, 244, 206) url("../imgs/face.png") center no-repeat;
-    box-shadow: 0 0 40px wheat;
-  }
-  60% {
-    background: rgb(255, 244, 206) url("../imgs/face.png") center no-repeat;
-    box-shadow: 0 0 40px wheat;
-  }
-  80% {
-    background: rgb(255, 247, 220) url("../imgs/face.png") center no-repeat;
-=======
-    background: #ff6d53;
-  }
-  30% {
-    background: #ff6d53;
+    background: #ff6d53 url("../imgs/face.png") center no-repeat;
     box-shadow: 0 0 10px #ffa0b8;
   }
   50% {
-    background: #fff4ce;
+    background: #fff4ce url("../imgs/face.png") center no-repeat;
     box-shadow: 0 0 40px wheat;
   }
   60% {
-    background: #fff4ce;
+    background: #fff4ce url("../imgs/face.png") center no-repeat;
     box-shadow: 0 0 40px wheat;
   }
   80% {
-    background: #fff7dc;
->>>>>>> origin/main
+    background: #fff7dc url("../imgs/face.png") center no-repeat;
     box-shadow: 0 0 50px wheat, 0 0 60px wheat;
   }
   100% {

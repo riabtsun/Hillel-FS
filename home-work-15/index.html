@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link rel='stylesheet' href='dist/output.css'>
+  <title>Document</title>
+</head>
+<body class="bg-white dark:bg-slate-800 font-main">
+
+<div class="px-4 max-w-screen-xl mx-auto">
+
+  <header class="px-2 border-b flex items-center gap-8 justify-between mb-10">
+    <a class="font-bold uppercase block text-tomato py-4" href="">Site logo</a>
+    <nav class="hidden md:block">
+      <ul class="font-semibold text-gray-700 flex items-center gap-8">
+        <li><a class="navbar-link" href="">Home</a></li>
+        <li><a class="navbar-link" href="">About</a></li>
+        <li><a class="navbar-link" href="">Contacts</a></li>
+        <li><a class="navbar-link" href="">News</a></li>
+      </ul>
+    </nav>
+
+    <button class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="px-2 flex gap-2 flex-col md:flex-row mb-10 ">
+      <article class="h-64 md:h-96 md:w-2/3 relative overflow-hidden rounded-md">
+        <a class="hero-link group" href="">
+          <h2 class="hero-title">Lorem ipsum dolor sit amet.</h2>
+          <img class="hero-img" src="assets/img/image1.jpeg" alt="image1">
+          <div class="hero-overlay"></div>
+        </a>
+      </article>
+
+      <article class="h-64 md:h-96 md:w-1/3 relative overflow-hidden rounded-md">
+        <a class="hero-link group" href="">
+          <h2 class="hero-title">Lorem ipsum dolor sit amet.</h2>
+          <img class="hero-img" src="assets/img/image2.jpg" alt="image2">
+          <div class="hero-overlay"></div>
+        </a>
+      </article>
+    </section>
+
+    <div class="px-2 flex gap-10 flex-col md:flex-row mb-10">
+      <section class="flex-grow basis-0">
+        <h1 class="text-3xl font-bold text-gray-500 mb-10">Lorem ipsum dolor sit amet.</h1>
+        <article class="mb-8">
+          <a class="flex gap-4 flex-col md:flex-row" href="">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 -mt-2 dark:text-white/70">Lorem ipsum dolor sit amet.</h2>
+              <p class="text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sunt corporis sit debitis fugit aperiam optio obcaecati.</p>
+            </div>
+            <img class="md:w-44 h-44 opacity-75 object-cover order-first" src="assets/img/image3.jpeg" alt="image3">
+          </a>
+        </article>
+
+        <article class="mb-8">
+          <a class="flex gap-4 flex-col md:flex-row" href="">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 -mt-2 dark:text-white/70">Lorem ipsum dolor sit amet.</h2>
+              <p class="text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, laudantium.</p>
+            </div>
+            <img class="md:w-44 h-44 opacity-75 object-cover order-first" src="assets/img/image4.jpg" alt="image4">
+          </a>
+        </article>
+
+        <div class="my-10 ">
+          <ul class="flex justify-center">
+            <li><a
+              class="pagination-link rounded-l-md"
+              href="">First</a></li>
+            <li><a
+              class="pagination-link"
+              href="">Prev</a></li>
+            <li><a
+              class="pagination-link pagination-link__active "
+              href="">1</a></li>
+            <li><a
+              class="pagination-link"
+              href="">2</a></li>
+            <li><a
+              class="pagination-link"
+              href="">3</a></li>
+            <li><a
+              class="pagination-link"
+              href="">4</a></li>
+            <li><a
+              class="pagination-link"
+              href="">5</a></li>
+            <li><a
+              class="pagination-link"
+              href="">Next</a></li>
+            <li><a
+              class="pagination-link rounded-r-md""
+              href="">Last</a></li>
+          </ul>
+        </div>
+      </section>
+
+
+
+      <div class="md:w-1/3">
+        <h4 class="font-bold text-lg uppercase text-gray-700 mv-2 dark:text-white/50">Subscribe</h4>
+        <form class="w-full shadow-md rounded p-5 mx-auto dark:shadow-white/30" action="">
+          <div>
+            <label class="block text-gray-800 mb-2" for="email">Subscribe to our news</label>
+            <input class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-indigo-300" type="email" id="email" placeholder="Email adress">
+          </div>
+          <div class="mt-4">
+            <button class="block py-2 px-6 bg-blue-500 rounded uppercase text-white font-medium text-sm hover:shadow-md hover:bg-blue-700 focus:outline-none" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="px-2 py-10 border-t mt-10">
+    <div class="flex gap-16">
+      <div>
+        <h5 class="font-semibold text-gray-700 mb-4">About us</h5>
+        <ul>
+          <li><a class="footer-link" href="">About our project</a></li>
+          <li><a class="footer-link" href="">Our team</a></li>
+          <li><a class="footer-link" href="">Contacts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-gray-700 mb-4">Us on social media</h5>
+        <ul>
+          <li><a class="footer-link" href="">Facebook</a></li>
+          <li><a class="footer-link" href="">Twitter</a></li>
+          <li><a class="footer-link" href="">instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+
+</html>
