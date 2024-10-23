@@ -1,37 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.navbar-link {
-    @apply block py-1 border-b-2 border-transparent hover:text-purple-800 hover:border-purple-800 transition duration-300 dark:text-white/70 dark:hover:text-white dark:hover:border-white;
+*,
+*::before,
+*::after {
+    @apply box-border
 }
 
-.pagination-link {
-    @apply block py-1 px-3 border border-gray-300 text-gray-500 hover:bg-blue-200 hover:border-blue-500 hover:text-blue-800 transition duration-300;
+html {
+    @apply overflow-y-scroll font-sans text-base
 }
 
-.pagination-link__active {
-    @apply bg-blue-300 border-blue-300 text-blue-800;
+body {
+    @apply text-gray bg-white
 }
 
-.footer-link {
-    @apply block py-1 text-gray-500 hover:underline underline-offset-4 decoration-gray-700;
+h1 {
+    @apply font-serif sm:text-[1.875rem] md:text-[2.5rem] lg:text-[3.75rem] font-light
+    leading-normal tracking-[0.08em] text-center leading-[1.2em] md:text-[2.5rem]
 }
 
-.hero-link {
-    @apply absolute left-0 top-0 right-0 bottom-0;
+h2 {
+    @apply font-serif
+}
+.nav-link {
+    @apply text-[1.125rem] font-normal tracking-[0.09em]
+    block py-gap px-gapSm
+    transition-colors duration-300
 }
 
-.hero-title {
-    @apply absolute p-4 bottom-0 left-0 z-10 text-2xl font-semibold text-gray-100 leading-tight;
+.nav-link:hover,
+.nav-link:focus {
+    @apply text-accent
 }
 
-.hero-img {
-    @apply absolute left-0 top-0 w-full h-full object-cover -z-10 transition duration-300 group-hover:scale-110;
+.header-btn {
+    @apply font-sans font-normal tracking-[0.1em] text-[18px]
+    min-w-[250px] min-h-[60px]
+    border-[2px] border-white border-solid
+    flex items-center justify-center
+    bg-[rgba(255,255,255,0.1)] py-[0.5em] px-[1em]
+    transition-colors duration-300
 }
 
-.hero-overlay {
-    @apply absolute left-0 top-0 w-full h-full bg-gradient-to-tr from-gray-800 via-transparent to-red-800 group-hover:bg-red-800/50 transition duration-300;
+.header-btn:hover,
+.header-btn:focus{
+    @apply bg-accent
 }
+
+a {
+    @apply no-underline text-white
+}
+
+.container {
+    @apply w-[min(100%_-_40px,_1300px)] mx-auto
+}
+
+/*.navbar-link {*/
+/*    @apply block py-1 border-b-2 border-transparent hover:text-purple-800 hover:border-purple-800 transition duration-300 dark:text-white/70 dark:hover:text-white dark:hover:border-white;*/
+/*}*/
+
+/*.pagination-link {*/
+/*    @apply block py-1 px-3 border border-gray-300 text-gray-500 hover:bg-blue-200 hover:border-blue-500 hover:text-blue-800 transition duration-300;*/
+/*}*/
+
+/*.pagination-link__active {*/
+/*    @apply bg-blue-300 border-blue-300 text-blue-800;*/
+/*}*/
+
+/*.footer-link {*/
+/*    @apply block py-1 text-gray-500 hover:underline underline-offset-4 decoration-gray-700;*/
+/*}*/
+
+/*.hero-link {*/
+/*    @apply absolute left-0 top-0 right-0 bottom-0;*/
+/*}*/
+
+/*.hero-title {*/
+/*    @apply absolute p-4 bottom-0 left-0 z-10 text-2xl font-semibold text-gray-100 leading-tight;*/
+/*}*/
+
+/*.hero-images {*/
+/*    @apply absolute left-0 top-0 w-full h-full object-cover -z-10 transition duration-300 group-hover:scale-110;*/
+/*}*/
+
+/*.hero-overlay {*/
+/*    @apply absolute left-0 top-0 w-full h-full bg-gradient-to-tr from-gray-800 via-transparent to-red-800 group-hover:bg-red-800/50 transition duration-300;*/
+/*}*/
