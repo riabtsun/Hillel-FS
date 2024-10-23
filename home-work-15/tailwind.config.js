@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-let gap = 20
+let gap = 20;
 module.exports = {
   content: ['*.html'],
   darkMode: 'class',
@@ -32,7 +32,7 @@ module.exports = {
       fontSize: { base: '16px' },
       spacing: {
         gap: gap + 'px',
-        gapSm: `${gap / 2}px`,
+        gapSm: `${gap * 0.5}px`,
         gapLg: `${gap * 1.5}px`,
         gapX2: `${gap * 2}px`,
         gapX3: `${gap * 3}px`,

@@ -21,7 +21,7 @@ body {
 
 h1 {
     @apply font-serif sm:text-[1.875rem] md:text-[2.5rem] lg:text-[3.75rem] font-light
-    leading-normal tracking-[0.08em] text-center leading-[1.2em] md:text-[2.5rem]
+    leading-normal tracking-[0.08em] text-center leading-[1.2em]
 }
 
 h2 {
@@ -39,8 +39,10 @@ h2 {
 }
 
 .header-btn {
-    @apply font-sans font-normal tracking-[0.1em] text-[18px]
-    min-w-[250px] min-h-[60px]
+    @apply font-sans font-normal tracking-[0.1em]
+    md:min-w-[170px] md:min-h-[40px]
+    md:min-w-[200px] md:min-h-[50px]
+    lg:text-[18px] lg:min-w-[250px] lg:min-h-[60px]
     border-[2px] border-white border-solid
     flex items-center justify-center
     bg-[rgba(255,255,255,0.1)] py-[0.5em] px-[1em]
@@ -52,12 +54,50 @@ h2 {
     @apply bg-accent
 }
 
+.menu-btn {
+    @apply relative w-[40px] h-[30px] ml-auto cursor-pointer
+}
+@media screen and (min-width: 576px) {
+    .menu-btn {
+        @apply hidden
+    }
+}
+.menu-btn.active span:nth-of-type(1) {
+    top: 12px;
+    transform: rotate(135deg);
+}
+.menu-btn.active span:nth-of-type(2) {
+    left: -40px;
+    opacity: 0;
+}
+.menu-btn.active span:nth-of-type(3) {
+    top: 12px;
+    transform: rotate(-135deg);
+}
+
+.menu-btn-row {
+    @apply absolute left-0 block w-full h-[4px] transition-all ease-in-out rotate-0 opacity-100 rounded bg-white
+}
+.menu-btn-row:nth-of-type(1) {
+    top: 0;
+}
+.menu-btn-row:nth-of-type(2) {
+    top: 12px;
+}
+.menu-btn-row:nth-of-type(3) {
+    top: 24px;
+}
+
 a {
     @apply no-underline text-white
 }
 
 .container {
     @apply w-[min(100%_-_40px,_1300px)] mx-auto
+}
+
+.visually-hidden{
+    @apply absolute overflow-hidden w-px h-px m-[-1px] p-0 border-0
 }
 
 /*.navbar-link {*/
