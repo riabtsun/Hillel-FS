@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-let gap = 20;
+let gap = 20
 module.exports = {
   content: ['*.html'],
   darkMode: 'class',
@@ -25,6 +25,34 @@ module.exports = {
       textColor: {
         tomato: 'tomato',
       },
+      gridAutoRows: {
+        '33vh': '33vh',
+        'custom': `calc(33.33333vh - ${40 / 3}px)`,
+      },
+      gridTemplateAreas: {
+        layoutXl: [
+          'a1 a1 a2 a3',
+          'a4 a5 a5 a6',
+          'a7 a8 a9 a6',
+        ],
+        layoutLg: [
+          'a1 a1 a2',
+          'a3 a4 a4',
+          'a5 a5 a6',
+          'a7 a9 a9',
+        ],
+        layoutSm: [
+          'a1 a2',
+          'a3 a2',
+          'a4 a4',
+          'a5 a6',
+          'a5 a7',
+          'a8 a9',
+        ],
+        layout: [
+          'a1', 'a2' ,'a3' ,'a4' ,'a5','a6', 'a7', 'a8', 'a9',
+        ],
+      },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
         serif: ['Roboto Slab', 'serif'],
@@ -39,11 +67,11 @@ module.exports = {
         gapX4: `${gap * 4}px`,
         gapX5: `${gap * 5}px`,
       },
-      minWidth:{
-        custom: 'min(100% - 40px, 1300px)'
-      }
+      minWidth: {
+        custom: 'min(100% - 40px, 1340px)',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 }
 

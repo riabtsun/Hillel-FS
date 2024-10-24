@@ -1,135 +1,141 @@
 <!doctype html>
-<html lang="zxx">
+<html lang='zxx'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-    <!-- Подключаем шрифты Roboto и Roboto Slab c сервиса google -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-          rel="stylesheet">
-    <!-- Подключаем иконочный шрифт fontawesome -->
-    <!--  <link rel="stylesheet" href="libs/@fortawesome/fontawesome-free/css/all.min.css">-->
-    <!-- Подключаем наш основной стиль, с которым будем работать -->
-    <link rel="stylesheet" href="dist/output.css">
-    <title>GRID-TEMPLATE</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link rel='shortcut icon' href='assets/images/favicon.png' type='image/png'>
+  <!-- Подключаем шрифты Roboto и Roboto Slab c сервиса google -->
+  <link rel='preconnect' href='https://fonts.gstatic.com'>
+  <link
+    href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap'
+    rel='stylesheet'>
+  <!-- Подключаем иконочный шрифт fontawesome -->
+  <!--  <link rel="stylesheet" href="libs/@fortawesome/fontawesome-free/css/all.min.css">-->
+  <!-- Подключаем наш основной стиль, с которым будем работать -->
+  <link rel='stylesheet' href='dist/output.css'>
+  <title>GRID-TEMPLATE</title>
 </head>
 
 <body class='box-border'>
 
-<header class="grid items-center py-[150px] px-0 relative bg-primary bg-[url('../assets/images/img-header.png')] min-h-[100vh] text-white bg-center bg-cover">
-    <div class='relative z-[1]'>
-        <div class='container'>
-            <h1 class='mb-[33px] md:mb-[43px] lg:mb-[53px] uppercase'>WE ARE REAL WEB-DEVELOPERS</h1>
-            <div class='flex items-center flex-col sm:flex-row gap-gap justify-center'>
-                <a class='header-btn' href='#'>Learn more</a>
-                <a class='header-btn' href='#'>Get started</a>
-            </div>
-        </div>
+<header
+  class="grid items-center py-[150px] px-0 relative bg-primary bg-[url('../assets/images/img-header.png')] min-h-[100vh] text-white bg-center bg-cover">
+  <div class='relative z-[1]'>
+    <div class='container'>
+      <h1 class='mb-[33px] md:mb-[43px] lg:mb-[53px] uppercase'>WE ARE REAL WEB-DEVELOPERS</h1>
+      <div class='flex items-center flex-col sm:flex-row gap-gap justify-center'>
+        <a class='header-btn' href='#'>Learn more</a>
+        <a class='header-btn' href='#'>Get started</a>
+      </div>
     </div>
+  </div>
 
-    <div class='header-menu absolute z-[2] absolute top-0 left-0 right-0 py-gap px-0'>
-        <div class='container grid grid-cols-[auto_1fr] gap-gap w-full items-center'>
-            <div class='logo'>
-                <a href='#' class='text-[1.5rem] tracking-[0.22em] block'>
-                    <span class='border-4 border-solid border-highLight inline-block mr-[4px] pt-[14px] pr-[1px] pb-[13px] pl-[4px]'>SITE</span>LOGO
-                </a>
-            </div>
-            <nav>
-                <div class="menu-btn">
-                    <span class="menu-btn-row"></span>
-                    <span class="menu-btn-row"></span>
-                    <span class="menu-btn-row"></span>
-                </div>
-                <ul class='hidden sm:grid header-navList grid gap-gap grid-cols-[repeat(auto-fit,_minmax(40px,_max-content))] w-full justify-end'>
-                    <li><a class='nav-link' href=''>Home</a></li>
-                    <li><a class='nav-link' href=''>About</a></li>
-                    <li class='mr-gapSm'><a class='nav-link' href=''>Contacts</a></li>
-                </ul>
-            </nav>
+  <div class='header-menu absolute z-[2] absolute top-0 left-0 right-0 py-gap px-0'>
+    <div class='container grid grid-cols-[auto_1fr] gap-gap w-full items-center'>
+      <div class='logo'>
+        <a href='#' class='text-[1.5rem] tracking-[0.22em] block'>
+          <span
+            class='border-4 border-solid border-highLight inline-block mr-[4px] pt-[14px] pr-[1px] pb-[13px] pl-[4px]'>SITE</span>LOGO
+        </a>
+      </div>
+      <nav>
+        <div class='menu-btn'>
+          <span class='menu-btn-row top-0'></span>
+          <span class='menu-btn-row top-[12px]'></span>
+          <span class='menu-btn-row top-[24px] relative'></span>
         </div>
+        <ul
+          class='header-navList'>
+          <li><a class='nav-link' href='#'>Home</a></li>
+          <li><a class='nav-link' href='#'>About</a></li>
+          <li class='mr-gapSm'><a class='nav-link' href=''>Contacts</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
 
-    <div class='absolute top-0 right-0 bottom-0 left-0 bg-primary opacity-[0.8]'></div>
+  <div class='absolute top-0 right-0 bottom-0 left-0 bg-primary opacity-[0.8]'></div>
 </header>
 
-<main class="main">
-    <section class="skills">
-        <h2 class="visually-hidden capitalize">Developer Skills Section</h2>
-        <div class="skills-container">
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">HTML</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">CSS</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">Markup</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">Web-Design</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">Quality Assurance</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">Codding</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">Adaptability</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">PHP</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-            <article class="skill-item">
-                <h3 class="skill-item__title">
-                    <a class="skill-item__link" href="">SEO</a>
-                </h3>
-                <div class="skill-item__image"></div>
-                <div class="skill-item__overlay"></div>
-            </article>
-        </div>
-        <div class="skills-actions">
-            <a class="nav-link bg-primary" href="">View all skills...</a>
-        </div>
-    </section>
+<main class='main'>
+  <section class='skills p-gapSm'>
+    <h2 class='visually-hidden capitalize'>Developer Skills Section</h2>
+    <div class='skills-grid'>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a1'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>HTML</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300  position-absolute bg-[url('../assets/images/img-html.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a2'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>CSS</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-css.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a3'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300 gap-gap justify-center items-center' href=''>Markup</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-markup.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a4'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>Web-Design</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-webdesign.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a5'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>Quality Assurance</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-qa.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a6'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>Codding</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-codding.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a7'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>Adaptability</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-adaptability.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a8'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>PHP</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-php.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+      <article class='skill-item bg-[50%,_50%] bg-cover relative grid-in-a9'>
+        <h3 class='text-[1.125rem] md:text-[1.25rem]'>
+          <a class='flex h-full duration-300  hover:text-accent  gap-gap justify-center items-center' href=''>SEO</a>
+        </h3>
+        <div class="bg-[50%,_50%] bg-cover bg-center skill-img duration-300 position-absolute bg-[url('../assets/images/img-seo.png')]"></div>
+        <div class='skill-overlay duration-300 position-absolute bg-primary opacity-[0.8]'></div>
+      </article>
+    </div>
+
+    <div class='skills-actions flex justify-center'>
+      <a class='nav-link text-center bg-primary hover:bg-accent hover:text-white w-[350px] h-[60px] block' href=''>View
+        all skills...</a>
+    </div>
+  </section>
 
 </main>
 
-<script src="assets/js/script.js"></script>
+<script src='assets/js/script.js'></script>
 </body>
 </html>

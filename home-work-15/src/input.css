@@ -19,6 +19,14 @@ body {
     @apply text-gray bg-white
 }
 
+.position-absolute {
+    @apply absolute top-0 right-0 bottom-0 left-0
+}
+
+a {
+    @apply no-underline text-white
+}
+
 h1 {
     @apply font-serif sm:text-[1.875rem] md:text-[2.5rem] lg:text-[3.75rem] font-light
     leading-normal tracking-[0.08em] text-center leading-[1.2em]
@@ -26,6 +34,9 @@ h1 {
 
 h2 {
     @apply font-serif
+}
+h3 {
+    @apply z-[1] m-0 position-absolute
 }
 .nav-link {
     @apply text-[1.125rem] font-normal tracking-[0.09em]
@@ -78,19 +89,40 @@ h2 {
 .menu-btn-row {
     @apply absolute left-0 block w-full h-[4px] transition-all ease-in-out rotate-0 opacity-100 rounded bg-white
 }
-.menu-btn-row:nth-of-type(1) {
-    top: 0;
+
+.skills-grid {
+    @apply mb-gapLg grid gap-gapSm auto-rows-custom
+    grid-areas-layout grid-cols-[repeat(1,_1fr)]
+    md:grid-areas-layoutSm md:grid-cols-[repeat(2,_1fr)]
+    lg:grid-areas-layoutLg lg:grid-cols-[repeat(3,_1fr)]
+    xl:grid-areas-layoutXl xl:grid-cols-[repeat(4,_1fr)]
 }
-.menu-btn-row:nth-of-type(2) {
-    top: 12px;
+.skill-item {
+    @apply overflow-hidden
 }
-.menu-btn-row:nth-of-type(3) {
-    top: 24px;
+.skill-item:hover a {
+    @apply text-accent
+}
+.skill-item:hover .skill-img {
+    @apply scale-110
+}
+.skill-item:hover .skill-overlay {
+    @apply opacity-95
 }
 
-a {
-    @apply no-underline text-white
+.header-navList {
+    @apply hidden
+    md:grid md:grid md:gap-gap
+    md:grid-cols-[repeat(auto-fit,_minmax(40px,_max-content))]
+    md:w-full justify-end
 }
+
+.header-navList.active {
+    @apply block absolute top-full
+    absolute w-full bg-grayDark
+
+}
+
 
 .container {
     @apply w-[min(100%_-_40px,_1300px)] mx-auto
@@ -100,34 +132,3 @@ a {
     @apply absolute overflow-hidden w-px h-px m-[-1px] p-0 border-0
 }
 
-/*.navbar-link {*/
-/*    @apply block py-1 border-b-2 border-transparent hover:text-purple-800 hover:border-purple-800 transition duration-300 dark:text-white/70 dark:hover:text-white dark:hover:border-white;*/
-/*}*/
-
-/*.pagination-link {*/
-/*    @apply block py-1 px-3 border border-gray-300 text-gray-500 hover:bg-blue-200 hover:border-blue-500 hover:text-blue-800 transition duration-300;*/
-/*}*/
-
-/*.pagination-link__active {*/
-/*    @apply bg-blue-300 border-blue-300 text-blue-800;*/
-/*}*/
-
-/*.footer-link {*/
-/*    @apply block py-1 text-gray-500 hover:underline underline-offset-4 decoration-gray-700;*/
-/*}*/
-
-/*.hero-link {*/
-/*    @apply absolute left-0 top-0 right-0 bottom-0;*/
-/*}*/
-
-/*.hero-title {*/
-/*    @apply absolute p-4 bottom-0 left-0 z-10 text-2xl font-semibold text-gray-100 leading-tight;*/
-/*}*/
-
-/*.hero-images {*/
-/*    @apply absolute left-0 top-0 w-full h-full object-cover -z-10 transition duration-300 group-hover:scale-110;*/
-/*}*/
-
-/*.hero-overlay {*/
-/*    @apply absolute left-0 top-0 w-full h-full bg-gradient-to-tr from-gray-800 via-transparent to-red-800 group-hover:bg-red-800/50 transition duration-300;*/
-/*}*/
