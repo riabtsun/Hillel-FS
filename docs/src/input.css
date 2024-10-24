@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+    @apply box-border
+}
+
+html {
+    @apply overflow-y-scroll font-sans text-base
+}
+
+body {
+    @apply text-gray bg-white
+}
+
+.position-absolute {
+    @apply absolute top-0 right-0 bottom-0 left-0
+}
+
+a {
+    @apply no-underline text-white
+}
+
+h1 {
+    @apply font-serif sm:text-[1.875rem] md:text-[2.5rem] lg:text-[3.75rem] font-light
+    leading-normal tracking-[0.08em] text-center leading-[1.2em]
+}
+
+h2 {
+    @apply font-serif
+}
+h3 {
+    @apply z-[1] m-0 position-absolute
+}
+.nav-link {
+    @apply text-[1.125rem] font-normal tracking-[0.09em]
+    block py-gap px-gapSm
+    transition-colors duration-300
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    @apply text-accent
+}
+
+.header-btn {
+    @apply font-sans font-normal tracking-[0.1em]
+    md:min-w-[170px] md:min-h-[40px]
+    md:min-w-[200px] md:min-h-[50px]
+    lg:text-[18px] lg:min-w-[250px] lg:min-h-[60px]
+    border-[2px] border-white border-solid
+    flex items-center justify-center
+    bg-[rgba(255,255,255,0.1)] py-[0.5em] px-[1em]
+    transition-colors duration-300
+}
+
+.header-btn:hover,
+.header-btn:focus{
+    @apply bg-accent
+}
+
+.menu-btn {
+    @apply relative w-[40px] h-[30px] ml-auto cursor-pointer
+}
+@media screen and (min-width: 576px) {
+    .menu-btn {
+        @apply hidden
+    }
+}
+.menu-btn.active span:nth-of-type(1) {
+    top: 12px;
+    transform: rotate(135deg);
+}
+.menu-btn.active span:nth-of-type(2) {
+    left: -40px;
+    opacity: 0;
+}
+.menu-btn.active span:nth-of-type(3) {
+    top: 12px;
+    transform: rotate(-135deg);
+}
+
+.menu-btn-row {
+    @apply absolute left-0 block w-full h-[4px] transition-all ease-in-out rotate-0 opacity-100 rounded bg-white
+}
+
+.skills-grid {
+    @apply mb-gapLg grid gap-gapSm auto-rows-custom
+    grid-areas-layout grid-cols-[repeat(1,_1fr)]
+    md:grid-areas-layoutSm md:grid-cols-[repeat(2,_1fr)]
+    lg:grid-areas-layoutLg lg:grid-cols-[repeat(3,_1fr)]
+    xl:grid-areas-layoutXl xl:grid-cols-[repeat(4,_1fr)]
+}
+.skill-item {
+    @apply overflow-hidden
+}
+.skill-item:hover a {
+    @apply text-accent
+}
+.skill-item:hover .skill-img {
+    @apply scale-110
+}
+.skill-item:hover .skill-overlay {
+    @apply opacity-95
+}
+
+.header-navList {
+    @apply hidden
+    md:grid md:grid md:gap-gap
+    md:grid-cols-[repeat(auto-fit,_minmax(40px,_max-content))]
+    md:w-full justify-end
+}
+
+.header-navList.active {
+    @apply block absolute top-full
+    absolute w-full bg-grayDark
+
+}
+
+
+.container {
+    @apply w-[min(100%_-_40px,_1300px)] mx-auto
+}
+
+.visually-hidden{
+    @apply absolute overflow-hidden w-px h-px m-[-1px] p-0 border-0
+}
+
