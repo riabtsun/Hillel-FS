@@ -1,0 +1,66 @@
+@use '../utils/variables' as *;
+
+h1 {
+  font-size: 2.5rem;
+  @extend %headingSets
+}
+
+h2 {
+  font-size: 2rem;
+  @extend %headingSets
+}
+
+h3 {
+  font-size: 1.75rem;
+  @extend %headingSets
+}
+
+h4 {
+  font-size: 1.5rem;
+  @extend %headingSets
+}
+
+h5 {
+  font-size: 1.25rem;
+  @extend %headingSets
+}
+
+h6 {
+  font-size: 1rem;
+  @extend %headingSets
+}
+
+.subheading {
+  font-family: $sansFont;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.label {
+  font-family: $sansFont;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.regular-text {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: $sansFont;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.bold-text {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: $sansFont;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 125%;
+}

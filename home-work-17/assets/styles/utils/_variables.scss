@@ -1,0 +1,23 @@
+// fonts
+$serifFont: "Crimson Text", serif;
+$sansFont: "Work Sans", sans-serif;
+
+%headingSets {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: $serifFont;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+// colors
+$dark: #212529ff;
+$dark75: #212529BF;
+$dark50: #2125297F;
+$dark25: #2125293F;
+
+$light: #fff;
+
+$layoutColor: #74c69d;
+$layoutColor75: #74C69DBF;
+$layoutColor50: #74C69D7F;
+$layoutColor25: #74C69D40;
