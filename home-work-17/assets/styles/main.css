@@ -1,3 +1,59 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "liga" off, "clig" off;
   font-family: "Crimson Text", serif;
@@ -29,12 +85,16 @@ h6 {
   font-size: 1rem;
 }
 
-.subheading {
+.subheading--light {
   font-family: "Work Sans", sans-serif;
   font-feature-settings: "liga" off, "clig" off;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 125%;
+}
+
+.subheading--light {
+  color: #fff;
 }
 
 .label {
@@ -66,6 +126,136 @@ h6 {
 
 hmtl {
   font-size: 16px;
+}
+
+.header {
+  background: #74c69d;
+  padding-top: 17px;
+}
+.header .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.header__link {
+  display: flex;
+  column-gap: 10px;
+}
+.header__link-logo {
+  width: 45px;
+}
+.header__link-text {
+  font-family: "Work Sans", sans-serif;
+  color: #fff;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 125%;
+}
+@media (min-width: 568px) {
+  .header__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu__btn {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 7px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.menu__btn-line {
+  background: #fff;
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+@media (min-width: 568px) {
+  .menu__btn {
+    display: none;
+  }
+}
+
+.menu__btn.active .menu__btn-line:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+}
+.menu__btn.active .menu__btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu__btn.active .menu__btn-line:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.nav {
+  height: 0;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+@media (min-width: 568px) {
+  .nav {
+    height: fit-content;
+  }
+}
+.nav__list {
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  opacity: 0;
+  transition: all 0.3s;
+  align-items: end;
+}
+.nav__list-link {
+  transition: color 0.3s;
+}
+.nav__list-link:hover {
+  color: #212529;
+}
+@media (min-width: 568px) {
+  .nav__list {
+    height: fit-content;
+    flex-direction: row;
+    opacity: 1;
+    column-gap: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .nav__list {
+    column-gap: 30px;
+  }
+}
+
+.nav.active {
+  height: 150px;
+  padding: 20px 0;
+}
+.nav.active .nav__list.active {
+  opacity: 1;
+}
+
+.container {
+  width: min(100% - 40px, 1440px);
+  margin-inline: auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+}
+
+section {
+  padding: 30px 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

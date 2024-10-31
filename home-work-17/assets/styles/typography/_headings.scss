@@ -30,12 +30,17 @@ h6 {
   @extend %headingSets
 }
 
-.subheading {
+%subheading {
   font-family: $sansFont;
   font-feature-settings: 'liga' off, 'clig' off;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 125%;
+}
+
+.subheading--light {
+  @extend %subheading;
+  color: $light;
 }
 
 .label {
