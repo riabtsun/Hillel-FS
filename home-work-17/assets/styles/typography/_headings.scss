@@ -1,5 +1,12 @@
 @use '../utils/variables' as *;
 
+%headingSets {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: $serifFont;
+  font-weight: 700;
+  line-height: 125%;
+}
+
 h1 {
   font-size: 2.5rem;
   @extend %headingSets
@@ -30,42 +37,3 @@ h6 {
   @extend %headingSets
 }
 
-%subheading {
-  font-family: $sansFont;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 125%;
-}
-
-.subheading--light {
-  @extend %subheading;
-  color: $light;
-}
-
-.label {
-  font-family: $sansFont;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 125%;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.regular-text {
-  color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: $sansFont;
-  font-size: 0.9375rem;
-  font-weight: 400;
-  line-height: 125%;
-}
-
-.bold-text {
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: $sansFont;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  line-height: 125%;
-}

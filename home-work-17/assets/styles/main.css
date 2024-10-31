@@ -54,7 +54,7 @@ table {
   border-spacing: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h6, h5, h4, h3, h2, h1 {
   font-feature-settings: "liga" off, "clig" off;
   font-family: "Crimson Text", serif;
   font-weight: 700;
@@ -85,7 +85,7 @@ h6 {
   font-size: 1rem;
 }
 
-.subheading--light {
+.btn--light, .subheading--light {
   font-family: "Work Sans", sans-serif;
   font-feature-settings: "liga" off, "clig" off;
   font-size: 1.25rem;
@@ -107,7 +107,7 @@ h6 {
   text-transform: uppercase;
 }
 
-.regular-text {
+.regular-text, .hero__description, .btn--dark {
   color: #000;
   font-feature-settings: "liga" off, "clig" off;
   font-family: "Work Sans", sans-serif;
@@ -116,7 +116,7 @@ h6 {
   line-height: 125%;
 }
 
-.bold-text {
+.bold-text, .hero__supheading {
   font-feature-settings: "liga" off, "clig" off;
   font-family: "Work Sans", sans-serif;
   font-size: 0.9375rem;
@@ -126,6 +126,22 @@ h6 {
 
 hmtl {
   font-size: 16px;
+}
+
+.btn--light {
+  padding: 13px 48px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #212529;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn--light:hover {
+  background: rgba(255, 255, 255, 0.7490196078);
+}
+.btn--light:active {
+  transform: scale(0.97);
 }
 
 .header {
@@ -245,7 +261,7 @@ hmtl {
 }
 
 .container {
-  width: min(100% - 40px, 1440px);
+  width: min(100% - 40px, 1180px);
   margin-inline: auto;
   padding: 0 20px;
 }
@@ -255,7 +271,63 @@ hmtl {
 }
 
 section {
-  padding: 30px 20px;
+  padding: 30px 0;
+}
+
+.hero {
+  background: #74c69d;
+  padding: 35px 0 40px;
+}
+.hero__wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media (min-width: 768px) {
+  .hero__wrap {
+    flex-direction: row;
+    column-gap: 120px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__wrap {
+    justify-content: normal;
+  }
+}
+@media (min-width: 768px) {
+  .hero__info {
+    max-width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  .hero__info {
+    max-width: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__info {
+    max-width: 38%;
+  }
+}
+.hero__supheading {
+  color: #fff;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.hero__description {
+  color: rgba(255, 255, 255, 0.7490196078);
+  margin-bottom: 25px;
+}
+.hero__media-img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.main-title {
+  color: #fff;
+  margin: 15px 0;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=main.css.map */
