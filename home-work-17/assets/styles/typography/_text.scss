@@ -1,4 +1,6 @@
 @use "../utils/variables" as *;
+@use "../utils/variables" as *;
+
 %subheading {
   font-family: $sansFont;
   font-feature-settings: 'liga' off, 'clig' off;
@@ -7,12 +9,23 @@
   line-height: 125%;
 }
 
+.subheading--regular {
+  @extend %subheading;
+  color: $dark;
+}
+
 .subheading--light {
   @extend %subheading;
   color: $light;
 }
 
-.label {
+.subheading--color {
+  @extend %subheading;
+  color: $layoutColor;
+}
+
+
+%label-text {
   font-family: $sansFont;
   font-feature-settings: 'liga' off, 'clig' off;
   font-size: 1rem;
@@ -22,19 +35,36 @@
   text-transform: uppercase;
 }
 
-.regular-text {
-  color: #000;
+.label-text--color {
+  @extend %label-text;
+  color: $layoutColor;
+}
+
+%regular-text {
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: $sansFont;
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 125%;
+  text-align: start;
+  margin: 16px 0;
 }
 
-.bold-text {
+.regular-text--light50 {
+  @extend %regular-text;
+  color: $dark50;
+}
+
+.regular-text--light75 {
+  @extend %regular-text;
+  color: $dark75;
+}
+
+%bold-text {
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: $sansFont;
   font-size: 0.9375rem;
   font-weight: 700;
   line-height: 125%;
 }
+

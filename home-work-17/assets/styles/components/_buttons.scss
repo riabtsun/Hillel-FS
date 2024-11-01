@@ -1,27 +1,37 @@
 @use '../typography/text' as *;
 @use '../utils/variables' as *;
 
-
-.btn--light {
+%btnSets {
   @extend %subheading;
-  padding: 13px 48px;
   border: none;
   border-radius: 5px;
-  background: $light;
-  color: $dark;
   cursor: pointer;
   transition: background .3s;
-  &:hover{
-    background: $light75;
-  }
   &:focus {
-    
+    outline: 1px solid $accent;
   }
   &:active {
     transform: scale(.97);
   }
 }
 
+.btn--light {
+  @extend %btnSets;
+  padding: 13px 48px;
+  background: $light;
+  color: $dark;
+  &:hover{
+    background: $light75;
+  }
+
+}
+
 .btn--dark {
-  @extend .regular-text;
+  @extend %btnSets;
+  padding: 13px 30px;
+  background: $dark;
+  color: $light;
+  &:hover{
+    background: $dark75;
+  }
 }

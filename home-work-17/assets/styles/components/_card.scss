@@ -1,0 +1,12 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.card {
+  border-radius: 5px;
+  background: $light;
+  box-shadow: $box-shadow;
+  padding: 20px 40px;
+  @include media-bp-up(lg) {
+    padding: 20px 25px;
+  }
+}

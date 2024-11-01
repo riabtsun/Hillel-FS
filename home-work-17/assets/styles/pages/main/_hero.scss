@@ -30,20 +30,19 @@
     }
   }
   &__supheading {
-    @extend .bold-text;
+    @extend %bold-text;
     color: $light;
     letter-spacing: 5px;
     text-transform: uppercase;
   }
   &__description {
-    @extend .regular-text;
+    @extend %regular-text;
     color: $light75;
     margin-bottom: 25px;
   }
   &__media-img {
     max-width: 100%;
     margin-bottom: 30px;
-    //@include media-bp-up(md)
   }
 }
 

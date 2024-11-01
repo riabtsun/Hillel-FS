@@ -1,4 +1,6 @@
 @forward "header";
+@forward "footer";
+@use '../utils/mixins' as *;
 
 .container {
   width: min(100% - 40px, 1180px);
@@ -9,6 +11,15 @@
 .row {
   display: flex;
 }
+
 section {
-  padding: 30px 0
+  padding: 22px 0;
+  @include media-bp-up(md){
+    padding: 30px 0;
+  }
+}
+
+object {
+  pointer-events: none;
+  width: 100%;
 }
