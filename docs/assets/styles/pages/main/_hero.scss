@@ -1,0 +1,53 @@
+@use '../../utils/variables' as *;
+@use '../../utils/mixins' as *;
+@use '../../typography/text' as *;
+
+.hero {
+  background: $layoutColor;
+  padding: 35px 0 40px;
+  &__wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media-bp-up(md){
+      flex-direction: row;
+      column-gap: 120px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media-bp-up(xl){
+      justify-content: normal;
+    }
+  }
+  &__info {
+    @include media-bp-up(md){
+      max-width: 45%;
+    }
+    @include media-bp-up(lg){
+      max-width: 40%;
+    }
+    @include media-bp-up(xl){
+      max-width: 38%;
+    }
+  }
+  &__supheading {
+    @extend %bold-text;
+    color: $light;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  &__description {
+    @extend %regular-text;
+    color: $light75;
+    margin-bottom: 25px;
+  }
+  &__media-img {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.main-title {
+  color: $light;
+  margin: 15px 0;
+  transition: all .3s;
+}

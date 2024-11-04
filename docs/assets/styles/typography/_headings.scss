@@ -1,0 +1,49 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+%headingSets {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: $serifFont;
+  font-weight: 700;
+  line-height: 125%;
+  margin: 16px 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  @extend %headingSets
+}
+
+h2 {
+  font-size: 2rem;
+  @extend %headingSets
+}
+
+h3 {
+  font-size: 1.75rem;
+  @extend %headingSets
+}
+
+h4 {
+  font-size: 1.5rem;
+  @extend %headingSets;
+  @include media-bp-up(md){
+    font-size: 2.5rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+  @extend %headingSets
+}
+
+h6 {
+  font-size: 1rem;
+  @extend %headingSets
+}
+
+.headings-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
