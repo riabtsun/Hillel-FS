@@ -2,8 +2,17 @@
 @use "../utils/mixins" as *;
 
 .header {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  left: 0;
+  top: 0;
   background: $layoutColor;
-  padding-top: 17px;
+  padding: 17px 0;
+  transition: transform .3s linear;
+  @include media-bp-up(lg){
+    padding: 38px 0;
+  }
 
   .row {
     justify-content: space-between;
@@ -115,5 +124,10 @@
   }
 }
 
-
+.header.hide {
+  transform: translateY(-110px);
+  @include media-bp-up(md) {
+    transform: translateY(-120px)
+  }
+}
 

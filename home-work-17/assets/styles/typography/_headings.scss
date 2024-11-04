@@ -42,3 +42,8 @@ h6 {
   @extend %headingSets
 }
 
+.headings-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -50,15 +50,21 @@
   margin: 16px 0;
 }
 
-.regular-text--light50 {
+.regular-text--dark {
+  @extend %regular-text;
+  color: $dark;
+}
+
+.regular-text--dark75 {
+  @extend %regular-text;
+  color: $dark75;
+}
+
+.regular-text--dark50 {
   @extend %regular-text;
   color: $dark50;
 }
 
-.regular-text--light75 {
-  @extend %regular-text;
-  color: $dark75;
-}
 
 %bold-text {
   font-feature-settings: 'liga' off, 'clig' off;
