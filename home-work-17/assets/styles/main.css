@@ -159,6 +159,7 @@ hmtl {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
   transition: background 0.3s;
 }
 .btn--dark:focus, .btn--light:focus {
@@ -513,6 +514,51 @@ object {
   .team__persons .card__title {
     font-size: 1.5rem;
   }
+}
+
+.portfolio .row {
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio .subheading--regular {
+  text-align: center;
+}
+.portfolio__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 45px 0 30px;
+  row-gap: 30px;
+}
+@media (min-width: 768px) {
+  .portfolio__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .portfolio__list {
+    margin: 82px 0 64px;
+  }
+}
+@media (min-width: 1400px) {
+  .portfolio__list {
+    gap: 55px;
+  }
+}
+@media (min-width: 768px) {
+  .portfolio__item {
+    flex-basis: calc(50% - 30px);
+  }
+}
+@media (min-width: 1400px) {
+  .portfolio__item {
+    flex-basis: calc(50% - 55px);
+  }
+}
+.portfolio__img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
