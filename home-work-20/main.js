@@ -1,4 +1,4 @@
-console.log('#3. JavaScript homework example file')
+console.log("#3. JavaScript homework example file");
 
 /*
  * #1
@@ -11,11 +11,11 @@ console.log('#3. JavaScript homework example file')
  * age - будь-який вік, число
  */
 let userObj = {
-  firstName: 'Stepan',
-  lastName: 'Bandera',
+  firstName: "Stepan",
+  lastName: "Bandera",
   age: 25,
-}
-console.log(userObj)
+};
+console.log(userObj);
 
 /*
  * #2
@@ -28,9 +28,9 @@ console.log(userObj)
  * userObj.fullName() → 'John Smith'.
  */
 userObj.fullName = function () {
-  return `${this.firstName} ${this.lastName}`
-}
-console.log(userObj.fullName()) // John Smith
+  return `${this.firstName} ${this.lastName}`;
+};
+console.log(userObj.fullName()); // John Smith
 
 /*
  * #3
@@ -41,18 +41,18 @@ console.log(userObj.fullName()) // John Smith
  *
  * При виконанні завдання не використовуйте оператор if, потрібен розв'язок із логічним оператором ||.
  */
-function defUpperStr(string = 'DEFAULT TEXT') {
-  return string.toUpperCase()
+function defUpperStr(string = "DEFAULT TEXT") {
+  return string.toUpperCase();
 }
 
-console.log(defUpperStr('My text')) // MY TEXT
-console.log(defUpperStr()) // DEFAULT TEXT
+console.log(defUpperStr("My text")); // MY TEXT
+console.log(defUpperStr()); // DEFAULT TEXT
 function defUpperStr2(string) {
-  return string ? string.toUpperCase() : 'DEFAULT TEXT'
+  return string ? string.toUpperCase() : "DEFAULT TEXT";
 }
 
-console.log(defUpperStr2('My text')) // MY TEXT
-console.log(defUpperStr2()) // DEFAULT TEXT
+console.log(defUpperStr2("My text")); // MY TEXT
+console.log(defUpperStr2()); // DEFAULT TEXT
 
 /*
  * #4
@@ -71,18 +71,18 @@ console.log(defUpperStr2()) // DEFAULT TEXT
  * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 function evenFn(n) {
-  let arr = []
+  let arr = [];
   for (let i = 0; i <= n; i++) {
     if (i % 2 === 0 && i !== 0) {
-      arr.push(i)
+      arr.push(i);
     }
   }
-  return arr
+  return arr;
 }
 
-console.log(evenFn(10)) // [2, 4, 6, 8, 10]
-console.log(evenFn(15)) // [2, 4, 6, 8, 10, 12, 14]
-console.log(evenFn(20)) // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 /*
  * #5
@@ -104,37 +104,37 @@ console.log(evenFn(20)) // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 function weekFn(n) {
   switch (n) {
     case 1:
-      return 'Понеділок'
-      break
+      return "Понеділок";
+      break;
     case 2:
-      return 'Вівторок'
-      break
+      return "Вівторок";
+      break;
     case 3:
-      return 'Середа'
-      break
+      return "Середа";
+      break;
     case 4:
-      return 'Четвер'
-      break
+      return "Четвер";
+      break;
     case 5:
-      return "П'ятниця"
-      break
+      return "П'ятниця";
+      break;
     case 6:
-      return 'Субота'
-      break
+      return "Субота";
+      break;
     case 7:
-      return 'Неділя'
-      break
+      return "Неділя";
+      break;
     default:
-      return null
+      return null;
   }
 }
 
-console.log(weekFn(1)) // 'Понеділок'
-console.log(weekFn(3)) // 'Середа'
-console.log(weekFn(7)) // 'Неділя'
-console.log(weekFn(9)) // null
-console.log(weekFn(1.5)) // null
-console.log(weekFn('2')) // null
+console.log(weekFn(1)); // 'Понеділок'
+console.log(weekFn(3)); // 'Середа'
+console.log(weekFn(7)); // 'Неділя'
+console.log(weekFn(9)); // null
+console.log(weekFn(1.5)); // null
+console.log(weekFn("2")); // null
 
 /*
  * #6
@@ -157,36 +157,36 @@ function ageClassification(n) {
   return n <= 0
     ? null
     : n <= 24
-      ? 'Дитинство'
-      : n > 24 && n <= 44
-        ? 'Молодість'
-        : n > 44 && n <= 65
-          ? 'Зрілість'
-          : n > 65 && n <= 75
-            ? 'Старість'
-            : n > 75 && n <= 90
-              ? 'Довголіття'
-              : n > 90 && n <= 122
-                ? 'Рекорд'
-                : null
+    ? "Дитинство"
+    : n > 24 && n <= 44
+    ? "Молодість"
+    : n > 44 && n <= 65
+    ? "Зрілість"
+    : n > 65 && n <= 75
+    ? "Старість"
+    : n > 75 && n <= 90
+    ? "Довголіття"
+    : n > 90 && n <= 122
+    ? "Рекорд"
+    : null;
 }
 
-console.log('    -1 :', ageClassification(-1)) // -1 : null
-console.log('     0 :', ageClassification(0)) // 0 : null
-console.log('     1 :', ageClassification(1)) // 1 : Дитинство
-console.log('    24 :', ageClassification(24)) // 24 : Дитинство
-console.log(' 24.01 :', ageClassification(24.01)) // 24.01 : Молодість
-console.log('    44 :', ageClassification(44)) // 44 : Молодість
-console.log(' 44.01 :', ageClassification(44.01)) // 44.01 : Зрілість
-console.log('    65 :', ageClassification(65)) // 65 : Зрілість
-console.log('  65.1 :', ageClassification(65.1)) // 65.1 : Старість
-console.log('    75 :', ageClassification(75)) // 75 : Старість
-console.log(' 75.01 :', ageClassification(75.01)) // 75.01 : Довголіття
-console.log('    90 :', ageClassification(90)) // 90 : Довголіття
-console.log(' 90.01 :', ageClassification(90.01)) // 90.01 : Рекорд
-console.log('   122 :', ageClassification(122)) // 122 : Рекорд
-console.log('122.01 :', ageClassification(122.01)) // 122.01 : null
-console.log('   150 :', ageClassification(150)) // 150 : null
+console.log("    -1 :", ageClassification(-1)); // -1 : null
+console.log("     0 :", ageClassification(0)); // 0 : null
+console.log("     1 :", ageClassification(1)); // 1 : Дитинство
+console.log("    24 :", ageClassification(24)); // 24 : Дитинство
+console.log(" 24.01 :", ageClassification(24.01)); // 24.01 : Молодість
+console.log("    44 :", ageClassification(44)); // 44 : Молодість
+console.log(" 44.01 :", ageClassification(44.01)); // 44.01 : Зрілість
+console.log("    65 :", ageClassification(65)); // 65 : Зрілість
+console.log("  65.1 :", ageClassification(65.1)); // 65.1 : Старість
+console.log("    75 :", ageClassification(75)); // 75 : Старість
+console.log(" 75.01 :", ageClassification(75.01)); // 75.01 : Довголіття
+console.log("    90 :", ageClassification(90)); // 90 : Довголіття
+console.log(" 90.01 :", ageClassification(90.01)); // 90.01 : Рекорд
+console.log("   122 :", ageClassification(122)); // 122 : Рекорд
+console.log("122.01 :", ageClassification(122.01)); // 122.01 : null
+console.log("   150 :", ageClassification(150)); // 150 : null
 
 /*
  Блок тестирования, везде должны быть true:
@@ -226,18 +226,18 @@ console.log('   150 :', ageClassification(150)) // 150 : null
  */
 
 function oddFn(n) {
-  let arr = []
-  let i = 0
+  let arr = [];
+  let i = 0;
   while (i <= n) {
-    i % 2 !== 0 && arr.push(i)
-    i++
+    i % 2 !== 0 && arr.push(i);
+    i++;
   }
-  return arr
+  return arr;
 }
 
-console.log(oddFn(10)) // [1, 3, 5, 7, 9]
-console.log(oddFn(15)) // [1, 3, 5, 7, 9, 11, 13, 15]
-console.log(oddFn(20)) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 /*
  * #8
@@ -250,7 +250,9 @@ console.log(oddFn(20)) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
  * Реалізуйте перевірку: якщо третім параметром передається не функція, потрібно повернути false.
  */
 
-// function mainFunc(a, b, cb) { }
+function mainFunc(a, b, cb) {
+  return typeof cb === "function" ? cb(a, b) : false;
+}
 
 /*
  * Реалізуйте callback функції (cbRandom, cbPow, cbAdd) до основної функції (mainFunc), що повертатимуть відповідні результати обчислень.
@@ -258,24 +260,30 @@ console.log(oddFn(20)) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
  */
 
 // cbRandom(a, b) - обчислює і повертає довільне ціле число в діапазоні між a і b включно.
-// function cbRandom(min, max) { }
+function cbRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.round(Math.random() * (max - min) + min);
+}
 
 // cbPow(a, b) - обчислює і повертає результат піднесення числа a у ступінь b.
-// function cbPow(num, pow) { }
+function cbPow(num, pow) {
+  return num ** pow;
+}
 
 // cbAdd(a, b) - обчислює і повертає суму двох чисел a і b.
-// function cbAdd(a, b) { }
+function cbAdd(a, b) {
+  return a + b;
+}
 
-/*
- * mainFunc() повинна повертати результат роботи переданої їй поворотної функції, наприклад:
- * mainFunc(2, 5, cbRandom) → випадково від 2 до 5 включно
- * mainFunc(10, 30, cbRandom) → випадково 10..30 включно
- * mainFunc(2, 5, cbPow) → 32
- * mainFunc(2, 5, cbAdd) → 7
- * mainFunc(2, 5, 'not a func') → false
- */
+// mainFunc()повинна повертати результат роботи переданої їй поворотної функції, наприклад:
+console.log(mainFunc(2, 5, cbRandom)); // → випадково від 2 до 5 включно
+console.log(mainFunc(10, 30, cbRandom)); // → випадково 10..30 включно
+console.log(mainFunc(2, 5, cbPow)); // → 32
+console.log(mainFunc(2, 5, cbAdd)); // → 7
+console.log(mainFunc(2, 5, "not a func")); // → false
 
-// console.log(mainFunc(2, 5, cbRandom)) // цілі числа в діапазоні 2..5
-// console.log(mainFunc(2, 5, cbPow)) // 32
-// console.log(mainFunc(2, 5, cbAdd)) // 7
-// console.log(mainFunc(2, 5, 'not a func')) // false
+console.log(mainFunc(2, 5, cbRandom)); // цілі числа в діапазоні 2..5
+console.log(mainFunc(2, 5, cbPow)); // 32
+console.log(mainFunc(2, 5, cbAdd)); // 7
+console.log(mainFunc(2, 5, "not a func")); // false
