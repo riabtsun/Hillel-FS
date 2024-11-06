@@ -229,10 +229,8 @@ function oddFn(n) {
   let arr = []
   let i = 0
   while (i <= n) {
-    // if (i % 2 !== 0) {
-    i % 2 !== 0 ? arr.push(i) : i++
-    // }
-    // ++i
+    i % 2 !== 0 && arr.push(i)
+    i++
   }
   return arr
 }
