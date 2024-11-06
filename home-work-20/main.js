@@ -41,12 +41,21 @@ console.log(userObj.fullName()); // John Smith
  *
  * При виконанні завдання не використовуйте оператор if, потрібен розв'язок із логічним оператором ||.
  */
-function defUpperStr(string = "DEFAULT TEXT") {
-  return string.toUpperCase();
+
+function defUpperStr(string) {
+  return (string || "default text").toUpperCase();
 }
 
 console.log(defUpperStr("My text")); // MY TEXT
 console.log(defUpperStr()); // DEFAULT TEXT
+
+function defUpperStr1(string = "DEFAULT TEXT") {
+  return string.toUpperCase();
+}
+
+console.log(defUpperStr1("My text")); // MY TEXT
+console.log(defUpperStr1()); // DEFAULT TEXT
+
 function defUpperStr2(string) {
   return string ? string.toUpperCase() : "DEFAULT TEXT";
 }
