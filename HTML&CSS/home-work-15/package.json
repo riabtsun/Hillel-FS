@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "npx tailwindcss -i src/input.css -o ./dist/output.css --watch"
   },
   "author": "",
   "license": "ISC",
