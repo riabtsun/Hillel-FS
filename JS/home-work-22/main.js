@@ -40,33 +40,37 @@ console.log(counter()); // 1
  * counterFactory.decrement() - зменшує значення лічильника на 1
  */
 
-// const counterFactory = (function () {
-//   let count = 0
-//   return {
-//     value: function (n = 0) {
-//       return n === 'number' ? (count = n) : count++
-//     },
-//     increment: function () {
-//       return (count += 1)
-//     },
-//   }
-// })()
+const counterFactory = (function () {
+  let count = 0;
+  return {
+    increment() {
+      count++;
+      return count;
+    },
+    decrement() {
+      count--;
+      return count;
+    },
+    value() {
+      return count;
+    },
+  };
+})();
 
-// console.log(counterFactory.value()) // 0
-// counterFactory.increment()
-// counterFactory.increment()
-// counterFactory.increment()
-// counterFactory.increment()
-// console.log(counterFactory.value()) // 3
-// counterFactory.decrement()
-// counterFactory.decrement()
-// console.log(counterFactory.value()) // 1
-// console.log(counterFactory.value(100)) // 100
-// counterFactory.decrement()
-// console.log(counterFactory.value()) // 99
-// console.log(counterFactory.value(200)) // 200
-// counterFactory.increment()
-// console.log(counterFactory.value()) // 201
+console.log('cccc ' + counterFactory.value()); // 0
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.increment();
+console.log(counterFactory.value()); // 3
+counterFactory.decrement();
+counterFactory.decrement();
+console.log(counterFactory.value()); // 1
+console.log(counterFactory.value(100)); // 100
+counterFactory.decrement();
+console.log(counterFactory.value()); // 99
+console.log(counterFactory.value(200)); // 200
+counterFactory.increment();
+console.log(counterFactory.value()); // 201
 
 /*
  * #3
@@ -84,12 +88,9 @@ console.log(counter()); // 1
 
 const myPrint = (a, b, res) => `${a}^${b}=${res}`;
 
-// const myPow = (a, b, callback) => callback(a, b, a ** b);
-
-//variant 2
 const myPow = (a, b, callback) => {
   const myPow = (x, n) => {
-    n == 1 ? x : x * myPow(x, n - 1);
+    return n === 0 ? 1 : n < 0 ? 1 / myPow(x, -b) : x * myPow(x, n - 1);
   };
   const result = myPow(a, b);
   return callback(a, b, result);
