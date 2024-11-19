@@ -1,4 +1,4 @@
-console.log('#5. JavaScript homework example file')
+console.log('#5. JavaScript homework example file');
 
 /*
  * #1
@@ -10,24 +10,24 @@ console.log('#5. JavaScript homework example file')
  */
 
 const counter = (() => {
-  let count = 0
+  let count = 0;
   return (n) => {
-    typeof n === 'number' ? (count = n) : count++
-    return count
-  }
-})()
+    typeof n === 'number' ? (count = n) : count++;
+    return count;
+  };
+})();
 
-console.log(counter()) // 0
-console.log(counter()) // 1
-console.log(counter(100)) // 100
-console.log(counter()) // 101
-console.log(counter()) // 102
-console.log(counter(500)) // 500
-console.log(counter()) // 501
-console.log(counter()) // 502
-console.log(counter(0)) // 0
-console.log(counter()) // 0
-console.log(counter()) // 1
+console.log(counter()); // 0
+console.log(counter()); // 1
+console.log(counter(100)); // 100
+console.log(counter()); // 101
+console.log(counter()); // 102
+console.log(counter(500)); // 500
+console.log(counter()); // 501
+console.log(counter()); // 502
+console.log(counter(0)); // 0
+console.log(counter()); // 0
+console.log(counter()); // 1
 
 /*
  * #2
@@ -40,24 +40,24 @@ console.log(counter()) // 1
  * counterFactory.decrement() - зменшує значення лічильника на 1
  */
 
-const counterFactory = (function () {
-  let count = 0
-  return {
-    value: function (n = 0) {
-      return n == 'number' ? (count = n) : count++
-    },
-    increment: function () {
-      return (count += 1)
-    },
-  }
-})()
+// const counterFactory = (function () {
+//   let count = 0
+//   return {
+//     value: function (n = 0) {
+//       return n === 'number' ? (count = n) : count++
+//     },
+//     increment: function () {
+//       return (count += 1)
+//     },
+//   }
+// })()
 
-console.log(counterFactory.value()) // 0
-counterFactory.increment()
-counterFactory.increment()
-counterFactory.increment()
-counterFactory.increment()
-console.log(counterFactory.value()) // 3
+// console.log(counterFactory.value()) // 0
+// counterFactory.increment()
+// counterFactory.increment()
+// counterFactory.increment()
+// counterFactory.increment()
+// console.log(counterFactory.value()) // 3
 // counterFactory.decrement()
 // counterFactory.decrement()
 // console.log(counterFactory.value()) // 1
@@ -82,13 +82,23 @@ console.log(counterFactory.value()) // 3
  * console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
  */
 
-// const myPrint = () => {}
-// const myPow = () => {}
+const myPrint = (a, b, res) => `${a}^${b}=${res}`;
 
-// console.log(myPow(3, 4, myPrint)) // 3^4=81
-// console.log(myPow(2, 3, myPrint)) // 2^3=8
-// console.log(myPow(2, 0, myPrint)) // 2^0=1
-// console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
+// const myPow = (a, b, callback) => callback(a, b, a ** b);
+
+//variant 2
+const myPow = (a, b, callback) => {
+  const myPow = (x, n) => {
+    n == 1 ? x : x * myPow(x, n - 1);
+  };
+  const result = myPow(a, b);
+  return callback(a, b, result);
+};
+
+console.log(myPow(3, 4, myPrint)); // 3^4=81
+console.log(myPow(2, 3, myPrint)); // 2^3=8
+console.log(myPow(2, 0, myPrint)); // 2^0=1
+console.log(myPow(2, -2, myPrint)); // 2^-2=0.25
 
 /*
  * #4
@@ -97,10 +107,10 @@ console.log(counterFactory.value()) // 3
  * У реалізації функції має бути застосовано метод Math.max() і apply().
  */
 
-// const list = [12, 23, 100, 34, 56, 9, 233]
-// const myMax = () => {}
+const list = [12, 23, 100, 34, 56, 9, 233];
+const myMax = (arr) => Math.max.apply(list, arr);
 
-// console.log(myMax(list)); // 233
+console.log(myMax(list)); // 233
 
 /*
  * #5
@@ -108,7 +118,7 @@ console.log(counterFactory.value()) // 3
  * Створіть функцію myMul(a, b), яка буде множити числа а і b, повертаючи результат.
  */
 
-// const myMul = () => {}
+const myMul = (a, b) => a * b;
 
 /*
  * Створіть функції myDouble(n), яка приймає один параметр і подвоює його.
@@ -116,9 +126,9 @@ console.log(counterFactory.value()) // 3
  * Функція повертає результат обчислення.
  */
 
-// const myDouble
+// const myDouble = (n) => n.bind(myMul());
 
-// console.log(myDouble(3)) // = myMul(2, 3) = 6
+// console.log(myDouble(3)); // = myMul(2, 3) = 6
 // console.log(myDouble(4)) // = myMul(2, 4) = 8
 // console.log(myDouble(5)) // = myMul(2, 5) = 10
 
