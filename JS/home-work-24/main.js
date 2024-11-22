@@ -1,3 +1,4 @@
+const container = document.querySelector('.container');
 /*
  * #1
  *
@@ -13,6 +14,7 @@ function sumArray(numbers) {
 const exampleArray = [1, 2, 3, 4, 5];
 const sum = sumArray(exampleArray);
 console.log('Сума елементів масиву:', sum); // Виведення суми
+container.innerHTML = ` <p>Сума елементів масиву: ${sum}</p>`;
 
 /*
  * #2
@@ -23,11 +25,11 @@ console.log('Сума елементів масиву:', sum); // Виведен
 function doubleArrayElements(numbers) {
   return numbers.map((number) => number * 2);
 }
-
 // Використання функції
 // const exampleArray = [1, 2, 3, 4, 5];
 const doubledArray = doubleArrayElements(exampleArray);
 console.log('Подвоєні елементи масиву:', doubledArray); // Виведення подвоєних елементів
+container.innerHTML += `<p>Подвоєні елементи масиву: ${doubledArray}</p>`;
 
 /*
  * #3
@@ -69,6 +71,7 @@ console.log(skillsManager.addSkill('JavaScript'));
 console.log(skillsManager.addSkill('CSS'));
 console.log(skillsManager.getAllSkills());
 
+container.innerHTML += `<p>${skillsManager.getAllSkills()}</p>`;
 /*
  * #4
  * Задача: Калькулятор дат.
@@ -87,25 +90,30 @@ console.log(skillsManager.getAllSkills());
  */
 
 function DateCalculator(initialDate) {
+  this.date = new Date(initialDate);
   this.addDays = function (days) {
-    // code here
+    this.date.setDate(this.date.getDate() + days);
   };
 
   this.subtractDays = function (days) {
-    // code here
+    this.date.setDate(this.date.getDate() - days);
   };
 
   this.getResult = function () {
-    // code here
+    const year = this.date.getFullYear();
+    const month = this.date.getMonth() + 1;
+    const date = this.date.getDate();
+    return `${year}-${month}-${date}`;
   };
 }
 
 // Демонстрація використання
-// const dateCalculator = new DateCalculator('2023-01-01')
-// dateCalculator.addDays(5)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після додавання днів
+const dateCalculator = new DateCalculator('2023-01-01');
+dateCalculator.addDays(5);
+console.log(dateCalculator.getResult()); // Виводить нову дату після додавання днів
+container.innerHTML += `<p>${dateCalculator.getResult()}</p>`;
 //
-// dateCalculator.subtractDays(3)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після віднімання днів
-
+dateCalculator.subtractDays(1);
+console.log(dateCalculator.getResult()); // Виводить нову дату після віднімання днів
+container.innerHTML += `<p>${dateCalculator.getResult()}</p>`;
 // export { doubleArrayElements, sumArray, SkillsManager, DateCalculator };
