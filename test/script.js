@@ -274,18 +274,31 @@ for (let key in myObj2) {
 // let service = new Service();
 // service.doSomething();
 
-function askPassword(ok, fail) {
-  let password = prompt('Пароль?', '');
-  if (password === 'rockstar') ok();
-  else fail();
-}
-
-let user = {
-  name: 'Іван',
-
-  login(result) {
-    alert(this.name + (result ? ' увійшов' : ' виконав невдалу спробу входу'));
-  },
+// function askPassword(ok, fail) {
+//   let password = prompt('Пароль?', '');
+//   if (password === 'rockstar') ok();
+//   else fail();
+// }
+//
+// let user = {
+//   name: 'Іван',
+//
+//   login(result) {
+//     alert(this.name + (result ? ' увійшов' : ' виконав невдалу спробу входу'));
+//   },
+// };
+//
+// askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
+let options = {
+  era: 'long', //short
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  weekday: 'short', //long
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
 };
 
-askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
+let d = new Date();
+console.log(d.toLocaleString('ua-UA', options));
