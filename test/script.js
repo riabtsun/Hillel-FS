@@ -130,8 +130,8 @@ setTimeout(() => {
 }, 5000);
 
 //12
-let user = { name: 'stepan', surname: 'Bandera', favoriteNumber: 15 };
-console.log(`My name is ${user.name} ${user.surname}`);
+let user1 = { name: 'stepan', surname: 'Bandera', favoriteNumber: 15 };
+console.log(`My name is ${user1.name} ${user1.surname}`);
 
 //13
 let rndm = 'lorem10';
@@ -247,3 +247,45 @@ Object.prototype.country = 'England';
 for (let key in myObj2) {
   console.log(myObj2[key]);
 }
+
+// class Service {
+//   constructor() {
+//     this.numbers = [1, 2, 3];
+//     this.token = 'token';
+//   }
+//
+//   doSomething() {
+//     setTimeout(
+//       function doAnotherThing() {
+//         console.log(this.numbers);
+//         this.numbers.forEach(
+//           function log(number) {
+//             //Cannot read property 'forEach' of undefined
+//             console.log(number);
+//             console.log(this.token);
+//           }.bind(this)
+//         );
+//       }.bind(this),
+//       100
+//     );
+//   }
+// }
+
+// let service = new Service();
+// service.doSomething();
+
+function askPassword(ok, fail) {
+  let password = prompt('Пароль?', '');
+  if (password === 'rockstar') ok();
+  else fail();
+}
+
+let user = {
+  name: 'Іван',
+
+  login(result) {
+    alert(this.name + (result ? ' увійшов' : ' виконав невдалу спробу входу'));
+  },
+};
+
+askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
