@@ -1,5 +1,5 @@
 console.log('#6. JavaScript homework example file');
-
+let container = document.querySelector('.container');
 /*
  * #1
  * Задача: Калькулятор калорійності продуктів через клас.
@@ -44,9 +44,19 @@ calorieCalculator.addProduct('Banana', 89);
 
 console.log(calorieCalculator.getProductCalories('Apple')); // 52
 console.log(calorieCalculator.getProductCalories('Banana')); // 89
+container.innerHTML += `<p>${calorieCalculator.getProductCalories(
+  'Apple'
+)}</p>`;
+container.innerHTML += `<p>${calorieCalculator.getProductCalories(
+  'Banana'
+)}</p>`;
+
 //
 calorieCalculator.removeProduct('Apple');
 console.log(calorieCalculator.getProductCalories('Apple')); // Product not found
+container.innerHTML += `<p>${calorieCalculator.getProductCalories(
+  'Apple'
+)}</p>`;
 
 /*
  * #2
@@ -91,6 +101,9 @@ uniqueUsernames.addUser('john_doe'); // Ця дія не змінить набі
 //
 console.log(`Існує 'john_doe': ${uniqueUsernames.exists('john_doe')}`); // true
 console.log(`Кількість унікальних імен: ${uniqueUsernames.count()}`); // 2
-
+container.innerHTML += `<p>Існує "john_doe": ${uniqueUsernames.exists(
+  'john_doe'
+)}</p>`;
+container.innerHTML += `<p>Кількість унікальних імен: ${uniqueUsernames.count()}</p>`;
 // Експорт для використання в тестах
 // export { CalorieCalculator, UniqueUsernames };
