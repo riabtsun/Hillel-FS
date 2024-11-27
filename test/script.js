@@ -289,16 +289,3 @@ for (let key in myObj2) {
 // };
 //
 // askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
-let options = {
-  era: 'long', //short
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-  weekday: 'short', //long
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
-};
-
-let d = new Date();
-console.log(d.toLocaleString('ua-UA', options));
