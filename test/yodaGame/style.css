@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: beige;
+}
+
+.block{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    background-image: url('img/yoda.gif');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    transform-origin: 50% 100%;
+}
