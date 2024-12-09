@@ -68,9 +68,14 @@ const richUsers = users
   .filter(({ balance }) => toNumber(balance) > 2000)
   .reduce((acc, curr) => {
     acc += toNumber(curr.balance);
-    return acc;
+    return Math.round(acc);
   }, 0);
 
-const normalizeNumber = {};
+const normalizeNumber = (number) => {
+  number.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+};
 
 console.log(richUsers);

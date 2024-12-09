@@ -1,16 +1,20 @@
-function Carousel(sliderLine) {
-  this.container = document.createElement('div');
-  this.container.className = 'container';
-  document.body.appendChild(this.container);
+class Carousel {
+  constructor(sliderLine) {
+    this.intervalTime = sliderLine.intervalTime;
+    this.showIndicators = sliderLine.showIndicators;
+    this.numberOfSlider = sliderLine.numberOfSlider;
 
-  this.sliders = [];
-  this.indicators = [];
-  this.slideInterval = null;
-  this.intervalTime = sliderLine.intervalTime;
-  this.showIndicators = sliderLine.showIndicators;
-  this.numberOfSlider = sliderLine.numberOfSlider;
-  this.counter = 0;
-  this.step = 0;
+    this.container = document.createElement('div');
+    this.container.className = 'container';
+    document.body.appendChild(this.container);
+
+    this.sliders = [];
+    this.indicators = [];
+    this.slideInterval = null;
+
+    this.counter = 0;
+    this.step = 0;
+  }
 }
 
 Carousel.prototype.init = function () {
