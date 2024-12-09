@@ -66,8 +66,10 @@ let cosmeticsProducts = [
 // в котором находится имя категории. Например, let Kitchen = {category: 'kitchen'};
 // Всем товарам с массивов kitchenProducts, devicesProducts, cosmeticsProducts добавить в качестве объекта-прототипа объекты, созданные на первом шаге. После этого, дополнить каждый товар своими свойствами. Например:
 
-function Items(category) {
-  this.category = category;
+class Items {
+  constructor(category) {
+    this.category = category;
+  }
 }
 
 Items.prototype.render = function () {
