@@ -19,23 +19,51 @@ class Carousel {
 
     document.addEventListener('keydown', this.sliderControlButtons);
   }
+
   sliderControlButtons = (event) => {
     if (event.keyCode === 32 && this.spaceCounter === 1) {
       this.startSlide();
-      this.spaceCounter = 2;
     } else if (event.keyCode === 32 && this.spaceCounter === 2) {
       this.stopSlide();
-      this.spaceCounter = 1;
     } else if (event.keyCode === 37) {
       this.showPrevSlide();
     } else if (event.keyCode === 39) {
       this.showNextSlide();
     }
   };
+
+  dragSlide = function () {
+    let mouseDownX;
+    let mouseDownY;
+    let mouseUpX;
+    let mouseUpY;
+    let diffSlideX;
+    let diffSlideY;
+    let renderedSlides = document.querySelectorAll('.slider-item');
+    renderedSlides.forEach((slide) => {
+      slide.onmousedown = function (event) {
+        mouseDownX = event.clientX;
+        mouseDownY = event.clientY;
+      };
+      slide.onmouseup = function (event) {
+        mouseUpX = event.clientX;
+        mouseUpY = event.clientY;
+        diffSlideX = mouseUpX - mouseDownX;
+        diffSlideY = mouseUpY - mouseDownY;
+        // if (diffSlideX > 50) {
+        //   this.showNextSlide();
+        // }
+        slide.onmouseup = null;
+        console.log(mouseDownX, mouseUpX);
+      };
+    });
+  };
+
   init = function () {
     this.createElements();
     this.loadImages();
     this.setupEventListeners();
+    this.dragSlide();
   };
   createElements = function () {
     this.wrapperSlider = document.createElement('div');
@@ -92,7 +120,6 @@ class Carousel {
           if (this.showIndicators) {
             this.createIndicators();
           }
-          // this.startSlide();
         }
       };
       this.sliderLine.appendChild(img);
@@ -134,15 +161,17 @@ class Carousel {
     this.updateSlider();
     this.updateIndicators();
   };
-  startSlide = function () {
+  startSlide = () => {
     if (!this.slideInterval) {
       this.slideInterval = setInterval(
         () => this.showNextSlide(),
         this.intervalTime
       );
+      this.spaceCounter = 2;
     }
   };
-  stopSlide = function () {
+  stopSlide = () => {
+    this.spaceCounter = 1;
     clearInterval(this.slideInterval);
     this.slideInterval = null;
   };
