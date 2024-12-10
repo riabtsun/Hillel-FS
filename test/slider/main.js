@@ -14,8 +14,24 @@ class Carousel {
 
     this.counter = 0;
     this.step = 0;
-  }
 
+    this.spaceCounter = 1;
+
+    document.addEventListener('keydown', this.sliderControlButtons);
+  }
+  sliderControlButtons = (event) => {
+    if (event.keyCode === 32 && this.spaceCounter === 1) {
+      this.startSlide();
+      this.spaceCounter = 2;
+    } else if (event.keyCode === 32 && this.spaceCounter === 2) {
+      this.stopSlide();
+      this.spaceCounter = 1;
+    } else if (event.keyCode === 37) {
+      this.showPrevSlide();
+    } else if (event.keyCode === 39) {
+      this.showNextSlide();
+    }
+  };
   init = function () {
     this.createElements();
     this.loadImages();
@@ -47,14 +63,18 @@ class Carousel {
     this.playButton = document.createElement('button');
     this.playButton.className = 'play';
     this.playButton.innerHTML = 'PLAY';
+
     this.container.appendChild(this.playButton);
 
     this.pauseButton = document.createElement('button');
     this.pauseButton.className = 'pause';
     this.pauseButton.innerHTML = 'PAUSE';
     this.container.appendChild(this.pauseButton);
-  };
 
+    document.addEventListener('keydown', this.playStopSlider);
+
+    this.spaceCounter = 1;
+  };
   loadImages = function () {
     let countSlides = 0;
     for (let i = 0; i < this.numberOfSlide; i++) {
@@ -78,13 +98,11 @@ class Carousel {
       this.sliderLine.appendChild(img);
     }
   };
-
   updateSlider = function () {
     this.sliderLine.style.transform = `translateX(${
       -this.step * this.counter
     }px`;
   };
-
   createIndicators = function () {
     for (let i = 0; i < this.numberOfSlide; i++) {
       let indicator = document.createElement('span');
@@ -96,13 +114,11 @@ class Carousel {
       this.indicators.push(indicator);
     }
   };
-
   updateIndicators = function () {
     this.indicators.forEach((indicator, index) => {
       indicator.classList.toggle('active', index === this.counter);
     });
   };
-
   showPrevSlide = function () {
     this.counter = (this.counter - 1 + this.numberOfSlide) % this.numberOfSlide;
     this.updateSlider();
@@ -113,13 +129,11 @@ class Carousel {
     this.updateSlider();
     this.updateIndicators();
   };
-
   goToSlide = function (index) {
     this.counter = index;
     this.updateSlider();
     this.updateIndicators();
   };
-
   startSlide = function () {
     if (!this.slideInterval) {
       this.slideInterval = setInterval(
@@ -128,12 +142,10 @@ class Carousel {
       );
     }
   };
-
   stopSlide = function () {
     clearInterval(this.slideInterval);
     this.slideInterval = null;
   };
-
   setupEventListeners = function () {
     this.prevButton.addEventListener('click', () => this.showPrevSlide());
     this.nextButton.addEventListener('click', () => this.showNextSlide());
