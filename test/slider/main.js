@@ -53,7 +53,7 @@ class Carousel {
         // if (diffSlideX > 50) {
         //   this.showNextSlide();
         // }
-        slide.onmouseup = null;
+        // slide.onmouseup = null;
         console.log(mouseDownX, mouseUpX);
       };
     });
@@ -180,6 +180,31 @@ class Carousel {
     this.nextButton.addEventListener('click', () => this.showNextSlide());
     this.playButton.addEventListener('click', () => this.startSlide());
     this.pauseButton.addEventListener('click', () => this.stopSlide());
+
+    let firstPosition = 0;
+    const touchPosition = (lastPosition) => {
+      if (lastPosition < firstPosition) {
+        this.showNextSlide();
+      } else if (lastPosition > firstPosition) {
+        this.showPrevSlide();
+      }
+    };
+
+    this.sliderLine.addEventListener('touchstart', (ev) => {
+      let startPosition = ev.touches[0].clientX;
+    });
+
+    this.sliderLine.addEventListener('touchend', (ev) => {
+      touchPosition(ev.changedTouches[0].clientX);
+    });
+
+    this.sliderLine.addEventListener('mousedown', (ev) => {
+      let startPosition = ev.clientX;
+    });
+
+    this.sliderLine.addEventListener('mouseup', (ev) => {
+      touchPosition(ev.clientX);
+    });
   };
 }
 
