@@ -36,7 +36,6 @@ class Carousel {
     this.createElements();
     this.loadImages();
     this.setupEventListeners();
-    this.dragSlide();
   }
   createElements() {
     this.wrapperSlider = document.createElement('div');
