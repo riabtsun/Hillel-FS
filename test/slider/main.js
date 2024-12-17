@@ -32,7 +32,7 @@ class Carousel {
     }
   };
 
-  dragSlide = function () {
+  dragSlide() {
     let mouseDownX;
     let mouseDownY;
     let mouseUpX;
@@ -54,18 +54,17 @@ class Carousel {
         //   this.showNextSlide();
         // }
         // slide.onmouseup = null;
-        console.log(mouseDownX, mouseUpX);
       };
     });
-  };
+  }
 
-  init = function () {
+  init() {
     this.createElements();
     this.loadImages();
     this.setupEventListeners();
     this.dragSlide();
-  };
-  createElements = function () {
+  }
+  createElements() {
     this.wrapperSlider = document.createElement('div');
     this.wrapperSlider.className = 'wrapper-slider';
     this.container.appendChild(this.wrapperSlider);
@@ -102,8 +101,8 @@ class Carousel {
     document.addEventListener('keydown', this.playStopSlider);
 
     this.spaceCounter = 1;
-  };
-  loadImages = function () {
+  }
+  loadImages() {
     let countSlides = 0;
     for (let i = 0; i < this.numberOfSlide; i++) {
       let img = document.createElement('img');
@@ -124,13 +123,13 @@ class Carousel {
       };
       this.sliderLine.appendChild(img);
     }
-  };
-  updateSlider = function () {
+  }
+  updateSlider() {
     this.sliderLine.style.transform = `translateX(${
       -this.step * this.counter
     }px`;
-  };
-  createIndicators = function () {
+  }
+  createIndicators() {
     for (let i = 0; i < this.numberOfSlide; i++) {
       let indicator = document.createElement('span');
       indicator.className = 'indicator';
@@ -140,28 +139,28 @@ class Carousel {
       this.indicatorsContainer.appendChild(indicator);
       this.indicators.push(indicator);
     }
-  };
-  updateIndicators = function () {
+  }
+  updateIndicators() {
     this.indicators.forEach((indicator, index) => {
       indicator.classList.toggle('active', index === this.counter);
     });
-  };
-  showPrevSlide = function () {
+  }
+  showPrevSlide() {
     this.counter = (this.counter - 1 + this.numberOfSlide) % this.numberOfSlide;
     this.updateSlider();
     this.updateIndicators();
-  };
-  showNextSlide = function () {
+  }
+  showNextSlide() {
     this.counter = (this.counter + 1) % this.numberOfSlide;
     this.updateSlider();
     this.updateIndicators();
-  };
-  goToSlide = function (index) {
+  }
+  goToSlide(index) {
     this.counter = index;
     this.updateSlider();
     this.updateIndicators();
-  };
-  startSlide = () => {
+  }
+  startSlide() {
     if (!this.slideInterval) {
       this.slideInterval = setInterval(
         () => this.showNextSlide(),
@@ -169,13 +168,13 @@ class Carousel {
       );
       this.spaceCounter = 2;
     }
-  };
-  stopSlide = () => {
+  }
+  stopSlide() {
     this.spaceCounter = 1;
     clearInterval(this.slideInterval);
     this.slideInterval = null;
-  };
-  setupEventListeners = function () {
+  }
+  setupEventListeners() {
     this.prevButton.addEventListener('click', () => this.showPrevSlide());
     this.nextButton.addEventListener('click', () => this.showNextSlide());
     this.playButton.addEventListener('click', () => this.startSlide());
@@ -184,9 +183,9 @@ class Carousel {
     let firstPosition = 0;
     const touchPosition = (lastPosition) => {
       if (lastPosition < firstPosition) {
-        this.showNextSlide();
-      } else if (lastPosition > firstPosition) {
         this.showPrevSlide();
+      } else if (lastPosition > firstPosition) {
+        this.showNextSlide();
       }
     };
 
@@ -205,7 +204,7 @@ class Carousel {
     this.sliderLine.addEventListener('mouseup', (ev) => {
       touchPosition(ev.clientX);
     });
-  };
+  }
 }
 
 const carousel = new Carousel({
