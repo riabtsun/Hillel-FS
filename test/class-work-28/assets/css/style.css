@@ -34,6 +34,47 @@
     z-index: 2;
 }
 
-.slide:nth-last-of-type(1){
+.slide:nth-last-of-type(1) {
     background-color: blue;
+}
+
+.slide:nth-last-of-type(2) {
+    background-color: orange;
+}
+
+.slide:nth-last-of-type(3) {
+    background-color: green;
+}
+
+.slide:nth-last-of-type(4) {
+    background-color: coral;
+}
+
+.slide:nth-last-of-type(5) {
+    background-color: darkcyan;
+}
+
+.indicators,
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.indicator,
+.control {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    padding: 0.5em;
+    border-radius: 8px;
+    user-select: none;
+    width: 30px;
+    height: 30px;
+}
+
+.indicator.active {
+    background-color: red;
 }

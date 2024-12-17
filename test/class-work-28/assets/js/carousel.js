@@ -31,15 +31,15 @@ Carousel.prototype = {
       const indicator = document.createElement('div');
       indicator.setAttribute('class', i ? 'indicator' : 'indicator active');
       indicator.dataset.slideTo = `${i}`;
-      indicators.appendChild(indicator);
+      indicators.append(indicator);
     }
 
-    this.container.appendChild(indicators);
+    this.container.append(indicators);
     this.indicatorsContainer = this.container.querySelector(
       '#indicators-container'
     );
-    this.indicatorsItems =
-      this.indicatorsContainer.querySelectorAll('#indicator');
+    this.indicatorItems =
+      this.indicatorsContainer.querySelectorAll('.indicator');
   },
 
   _initProps() {
@@ -56,8 +56,8 @@ Carousel.prototype = {
 
   _initListeners() {
     this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
-    this.prevBtn.addEventListener('click', this.prevSlide.bind(this));
-    this.nextBtn.addEventListener('click', this.nextSlide.bind(this));
+    this.prevBtn.addEventListener('click', this.prev.bind(this));
+    this.nextBtn.addEventListener('click', this.next.bind(this));
     this.indicatorsContainer.addEventListener(
       'click',
       this._indicateHandler.bind(this)
@@ -82,8 +82,68 @@ Carousel.prototype = {
   },
 
   _tick() {
-    this.timerId = setTimeout(() => {
+    this.timerId = setInterval(() => {
       this._gotoNext();
     }, this.interval);
+  },
+
+  _indicateHandler(e) {
+    const { target } = e;
+    if (target && target.classList.contains('indicator')) {
+      this.pause();
+      this._gotoNth(+target.dataset.slideTo);
+    }
+  },
+
+  _pressKey(e) {
+    const code = e.code;
+    e.preventDefault();
+
+    switch (code) {
+      case this.CODE_SPACE:
+        this.pausePlay();
+        break;
+      case this.CODE_ARROW_LEFT:
+        this.prev();
+        break;
+      case this.CODE_ARROW_RIGHT:
+        this.next();
+        break;
+    }
+  },
+
+  pause() {
+    if (!this.isPlaying) return;
+    clearInterval(this.timerId);
+    this.pauseBtn.innerHTML = 'Play';
+    this.isPlaying = false;
+  },
+
+  play() {
+    this._tick();
+    this.pauseBtn.innerHTML = 'Pause';
+    this.isPlaying = true;
+  },
+
+  pausePlay() {
+    this.isPlaying ? this.pause() : this.play();
+  },
+
+  prev() {
+    this.pause();
+    this._gotoPrev();
+  },
+
+  next() {
+    this.pause();
+    this._gotoNext();
+  },
+
+  init() {
+    this._initProps();
+    this._initControls();
+    this._initIndicators();
+    this._initListeners();
+    this._tick();
   },
 };
