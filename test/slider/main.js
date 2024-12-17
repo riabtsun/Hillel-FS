@@ -32,32 +32,6 @@ class Carousel {
     }
   };
 
-  dragSlide() {
-    let mouseDownX;
-    let mouseDownY;
-    let mouseUpX;
-    let mouseUpY;
-    let diffSlideX;
-    let diffSlideY;
-    let renderedSlides = document.querySelectorAll('.slider-item');
-    renderedSlides.forEach((slide) => {
-      slide.onmousedown = function (event) {
-        mouseDownX = event.clientX;
-        mouseDownY = event.clientY;
-      };
-      slide.onmouseup = function (event) {
-        mouseUpX = event.clientX;
-        mouseUpY = event.clientY;
-        diffSlideX = mouseUpX - mouseDownX;
-        diffSlideY = mouseUpY - mouseDownY;
-        // if (diffSlideX > 50) {
-        //   this.showNextSlide();
-        // }
-        // slide.onmouseup = null;
-      };
-    });
-  }
-
   init() {
     this.createElements();
     this.loadImages();
