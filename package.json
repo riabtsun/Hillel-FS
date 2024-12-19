@@ -1,0 +1,26 @@
+{
+  "name": "hillel-fs",
+  "version": "1.0.0",
+  "description": "hillel full stack courses",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riabtsun/Hillel-FS.git"
+  },
+  "author": "Dmytro Riabtsun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riabtsun/Hillel-FS/issues"
+  },
+  "homepage": "https://github.com/riabtsun/Hillel-FS#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

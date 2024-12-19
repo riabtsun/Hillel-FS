@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
 <head>
-  <meta charset='UTF-8'>
-  <title>Title</title>
+  <title>Jasmine Testing in Browser</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine.css">
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine-html.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/boot.js"></script>
 </head>
 <body>
+<script>
+  // Функція, яку ми тестуватимемо
+  const addNumbers = (a, b) => {
+    return a + b;
+  };
 
-<script src='script.js'></script>
+  // Тестування функції addNumbers за допомогою Jasmine
+  describe('addNumbers', function() {
+    it('правильно додає два числа', function() {
+      expect(addNumbers(1, 2)).toEqual(3);
+    });
+  });
+</script>
 </body>
 </html>

@@ -63,15 +63,16 @@
 
 .indicator,
 .control {
+    width: fit-content;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: aqua;
-    padding: 0.5em;
+    padding: 1.5em;
     border-radius: 8px;
     user-select: none;
-    width: 30px;
+    /*width: 30px;*/
     height: 30px;
 }
 
