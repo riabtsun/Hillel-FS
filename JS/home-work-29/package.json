@@ -1,0 +1,17 @@
+{
+  "name": "home-work-29",
+  "version": "1.0.0",
+  "description": "testing with jest",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dmytro Riabtsun",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@jest/globals": "^29.7.0"
+  }
+}
