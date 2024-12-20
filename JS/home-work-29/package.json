@@ -2,7 +2,7 @@
   "name": "home-work-29",
   "version": "1.0.0",
   "description": "testing with jest",
-  "main": "script.js",
+  "main": "ageClassification.js",
   "scripts": {
     "test": "jest"
   },
