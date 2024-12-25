@@ -23,13 +23,9 @@ console.log(isValidEmail('invalid-email')); // Повинно вивести: fa
  *
  */
 
-/*
-
-*/
-
 function isValidUrl(url) {
   return !!url.match(
-    /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,10}$/
+    /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+=~#]{1,256}\.[a-zA-Z0-9()]{1,10}$/
   );
 }
 
