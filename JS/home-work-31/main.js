@@ -221,15 +221,23 @@ patchData(5, {
 
 async function deleteData(id) {
   try {
-    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      method: 'DELETE',
+    })
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! Запит не вдався: ${response.status}`);
+          throw new Error(
+            `Failed to delete post with id [${id}]: ${response.status}`
+          );
         }
         return response.json();
       })
-      .then((data) => console.log(data))
-      .catch((error) => console.error('Помилка:', error.message));
+      .then(() =>
+        console.log(`Post with id [${id}] has been successfully deleted.`)
+      )
+      .catch((error) =>
+        console.error('Error during deletion: ', error.message)
+      );
   } catch (error) {
     console.error(error.message);
   }
