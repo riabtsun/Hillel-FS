@@ -221,7 +221,7 @@ patchData(5, {
 
 async function deleteData(id) {
   try {
-    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, data)
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Запит не вдався: ${response.status}`);
@@ -235,9 +235,6 @@ async function deleteData(id) {
   }
 }
 
-deleteData(5, {
-  method: 'DELETE',
-  headers: { 'Content-Type': 'application/json' },
-});
+deleteData(5);
 
 // export { getData, postData, putData, patchData, deleteData };
