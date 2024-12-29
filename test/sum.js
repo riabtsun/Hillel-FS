@@ -1,5 +1,5 @@
-const sum = (a, b, c) => {
-  return a + b + c;
-};
+let text =
+  'А ви знали, що за перше місце надається знижка 3 000 ₴ на наступний курс?';
 
-module.exports = sum;
+const nonDigits = text.match(/\W/gi).join('');
+console.log(nonDigits);
