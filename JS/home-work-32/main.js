@@ -28,7 +28,9 @@ let totalResults = 0;
 
 async function searchMovies() {
   currentPage = 1;
+
   const query = searchInput.value;
+
   if (query.length < 3) {
     resultsDiv.innerHTML = ``;
     return;
@@ -40,17 +42,18 @@ async function searchMovies() {
   const data = await response.json();
 
   if (data.Response === 'True') {
-    console.log(data);
     totalResults = parseInt(data.totalResults);
     resultsDiv.innerHTML = ``;
-    const movies = data.Search.slice(0, 10);
-    movies.forEach((movie) => {
-      const movieItem = createMovieItem(movie);
+    const movies = data.Search.slice(0, 9);
+
+    for (const movie of movies) {
+      const movieItem = await createMovieItem(movie);
       resultsDiv.appendChild(movieItem);
-    });
+    }
+
     showMoreBtn.style.display = totalResults > 10 ? 'block' : 'none';
   } else {
-    resultsDiv.innerHTML = `No results Found! Please try again`;
+    resultsDiv.innerHTML = `<p class='no-results'>No results Found! Please try again</p>`;
     showMoreBtn.style.display = 'none';
   }
 }
@@ -64,13 +67,14 @@ showMoreBtn.addEventListener('click', async () => {
   );
   const data = await response.json();
 
-  const movies = data.Search.slice(0, 10);
-  movies.forEach((movie) => {
-    const movieDiv = createMovieItem(movie);
-    resultsDiv.appendChild(movieDiv);
-  });
+  const movies = data.Search.slice(0, 9);
 
-  if (currentPage * 10 >= totalResults) {
+  for (const movie of movies) {
+    const movieItem = await createMovieItem(movie);
+    resultsDiv.appendChild(movieItem);
+  }
+
+  if (currentPage * 9 >= totalResults) {
     showMoreBtn.style.display = 'none';
   }
 });

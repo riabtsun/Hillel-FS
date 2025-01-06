@@ -16,7 +16,8 @@ header {
   background-color: #373b69;
 }
 
-.search {
+.search,
+.show-more-btn {
   background-color: transparent;
   border: 2px solid #22254b;
   border-radius: 50px;
@@ -25,11 +26,13 @@ header {
   color: #fff;
   font-family: inherit;
 }
-.search:focus {
+.search:focus,
+.show-more-btn:focus {
   outline: 0;
   background-color: #22254b;
 }
-.search::placeholder {
+.search::placeholder,
+.show-more-btn::placeholder {
   color: #c6c9fc;
 }
 
@@ -50,6 +53,10 @@ header {
 }
 .movie img {
   width: 100%;
+}
+.movie a {
+  color: #fff;
+  text-decoration: none;
 }
 .movie:hover .overview {
   transform: translateY(0);
@@ -73,12 +80,6 @@ header {
   border-radius: 3px;
   font-weight: bold;
 }
-.movie-info .green {
-  color: lightgreen;
-}
-.movie-info .orange {
-  color: red;
-}
 
 .overview {
   position: absolute;
@@ -90,33 +91,25 @@ header {
   max-height: 100%;
   transform: translateY(101%);
   transition: 0.3s ease-in;
+  color: black;
 }
-
-#tags {
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
+.overview p {
+  background: #fff;
+  font-size: 12px;
 }
-
-.tag {
-  color: #fff;
-  padding: 10px 15px;
-  background-color: orange;
-  border-radius: 50px;
-  margin: 5px;
-  display: inline-block;
+.overview a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
   cursor: pointer;
 }
-
-.selectedTag {
-  background-color: #4ca456;
+.overview a:hover {
+  color: orange;
 }
 
 .no-results {
   color: #fff;
+  font-size: 2rem;
 }
 
 .heading {
@@ -124,6 +117,21 @@ header {
   color: #ffffff;
   margin: 0 auto;
   width: fit-content;
+}
+
+.show-more-btn {
+  background: #373b69;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.show-more-btn:hover {
+  background: #22254b;
+  color: orange;
+}
+
+.movie-img {
+  max-height: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

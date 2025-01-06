@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;800&family=PT+Sans:wght@700&display=swap')
 
-*
-  box-sizing: border-box
-
 $primary-color: #22254b
 $secondary-color: #373b69
+*
+  box-sizing: border-box
 
 body
   background-color: $primary-color
@@ -17,7 +16,8 @@ header
   justify-content: flex-end
   background-color: $secondary-color
 
-.search
+.search,
+.show-more-btn
   background-color: transparent
   border: 2px solid $primary-color
   border-radius: 50px
@@ -46,6 +46,9 @@ header
   overflow: hidden
   img
     width: 100%
+  a
+    color: #fff
+    text-decoration: none
   &:hover
     .overview
       transform: translateY(0)
@@ -65,10 +68,6 @@ header
     padding: 0.25rem
     border-radius: 3px
     font-weight: bold
-  .green
-    color: lightgreen
-  .orange
-    color: red
 
 .overview
   position: absolute
@@ -80,32 +79,36 @@ header
   max-height: 100%
   transform: translateY(101%)
   transition: .3s ease-in
-
-#tags
-  width: 80%
-  display: flex
-  flex-wrap: wrap
-  justify-content: center
-  align-items: center
-  margin: 10px auto
-
-.tag
-  color: #fff
-  padding: 10px 15px
-  background-color: orange
-  border-radius: 50px
-  margin: 5px
-  display: inline-block
-  cursor: pointer
-
-.selectedTag
-  background-color: #4ca456
+  color: black
+  p
+    background: #fff
+    font-size: 12px
+  a
+    text-decoration: none
+    color: #000
+    transition: color .3s
+    cursor: pointer
+    &:hover
+      color: orange
 
 .no-results
   color: #fff
+  font-size: 2rem
 
 .heading
   font-size: 3rem
   color: #ffffff
   margin: 0 auto
   width: fit-content
+
+.show-more-btn
+  background: $secondary-color
+  margin: 20px auto
+  cursor: pointer
+  transition: background .3s
+  &:hover
+    background: $primary-color
+    color: orange
+
+.movie-img
+  max-height: 50%
