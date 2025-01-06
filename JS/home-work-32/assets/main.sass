@@ -29,9 +29,9 @@ header
     outline: 0
     background-color: $primary-color
   &::placeholder
-    color: #7378c5
+    color: #c6c9fc
 
-main
+.result
   display: flex
   flex-wrap: wrap
   justify-content: center
@@ -53,13 +53,14 @@ main
 .movie-info
   color: #eee
   display: flex
+  flex-direction: column
   align-items: center
   justify-content: space-between
   padding: 0.5rem 1rem 1rem
   letter-spacing: 0.5px
-  h3
+  h2
     margin-top: 0
-  span
+  p
     background-color: $primary-color
     padding: 0.25rem
     border-radius: 3px
@@ -102,3 +103,9 @@ main
 
 .no-results
   color: #fff
+
+.heading
+  font-size: 3rem
+  color: #ffffff
+  margin: 0 auto
+  width: fit-content

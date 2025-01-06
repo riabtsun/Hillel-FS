@@ -4,43 +4,22 @@ import {
   createResultsContainer,
   createShowMoreButton,
   createHeading,
+  header,
 } from './dom.js';
 
-const url = 'http://www.omdbapi.com/?';
+const url = 'http://www.omdbapi.com/';
 const apiKey = '3fab1bd8';
 
-// const heading =
 document.body.appendChild(createHeading());
 
 const searchInput = createSearchInput();
-document.body.appendChild(searchInput);
+header.appendChild(searchInput);
 
 const resultsDiv = createResultsContainer();
 document.body.appendChild(resultsDiv);
 
 const showMoreBtn = createShowMoreButton();
 document.body.appendChild(showMoreBtn);
-
-// const getData = async (url) => {
-//   try {
-//     await fetch(url)
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error(`HTTP error! Запит не вдався: ${response.status}`);
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         createMovieItem(data);
-//       });
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// };
-
-// searchInput.addEventListener('input', (e) => {
-//   getData(`${url}s=${query}&apikey=${apiKey}&page=${currentPage}`);
-// });
 
 searchInput.addEventListener('input', debounce(searchMovies, 500));
 
@@ -56,11 +35,12 @@ async function searchMovies() {
   }
 
   const response = await fetch(
-    `${url}s=${query}&apikey=${apiKey}&page=${currentPage}`
+    `${url}?s=${query}&apikey=${apiKey}&page=${currentPage}`
   );
   const data = await response.json();
 
   if (data.Response === 'True') {
+    console.log(data);
     totalResults = parseInt(data.totalResults);
     resultsDiv.innerHTML = ``;
     const movies = data.Search.slice(0, 10);
@@ -80,7 +60,7 @@ showMoreBtn.addEventListener('click', async () => {
   const query = searchInput.value;
 
   const response = await fetch(
-    `${url}s=${query}&apikey=${apiKey}&page=${currentPage}`
+    `${url}?s=${query}&apikey=${apiKey}&page=${currentPage}`
   );
   const data = await response.json();
 
@@ -104,3 +84,5 @@ function debounce(func, timeout) {
     timer = setTimeout(func, timeout);
   };
 }
+
+export { url, apiKey };

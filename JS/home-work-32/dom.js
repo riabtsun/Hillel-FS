@@ -1,16 +1,24 @@
+const header = document.querySelector('.header');
 const createElement = (tagName, attributes = {}) => {
   const element = document.createElement(tagName);
   Object.assign(element, attributes);
   return element;
 };
 
-const createSearchInput = () =>
-  createElement('input', {
+const createSearchInput = () => {
+  return createElement('input', {
     type: 'text',
     placeholder: 'Search movie by name',
-    class: 'search',
+    className: 'search',
     id: 'search',
   });
+};
+const createHeading = () => {
+  return createElement('h1', {
+    textContent: 'MOVIE DATABASE',
+    className: 'heading',
+  });
+};
 
 const createResultsContainer = () =>
   createElement('div', {
@@ -18,17 +26,10 @@ const createResultsContainer = () =>
   });
 
 let createShowMoreButton = () => {
-  createElement('button', {
+  return createElement('button', {
     textContent: 'Show more',
     style: 'display: none',
     className: 'show-more-btn',
-  });
-};
-
-const createHeading = () => {
-  createElement('h1', {
-    textContent: 'MOVIE DATABASE',
-    className: 'heading',
   });
 };
 
@@ -37,4 +38,5 @@ export {
   createResultsContainer,
   createShowMoreButton,
   createHeading,
+  header,
 };
