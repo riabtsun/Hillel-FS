@@ -7,7 +7,7 @@ import {
   header,
 } from './dom.js';
 
-const url = 'http://www.omdbapi.com/';
+const url = 'https://www.omdbapi.com/';
 const apiKey = '3fab1bd8';
 
 document.body.appendChild(createHeading());
