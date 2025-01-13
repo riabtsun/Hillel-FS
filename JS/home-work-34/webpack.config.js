@@ -1,19 +1,35 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: './src/index.js',
-    stat: './src/statistics.js',
+    main: './index.js',
+    stat: './statistics.js',
   },
   output: {
-    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].[contenthash].js',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@css': path.resolve(__dirname, 'src/css'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
+    extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
     new CleanWebpackPlugin(),
   ],
   module: {
@@ -23,12 +39,26 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif|webp)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[hash][ext]',
+        },
       },
       {
-        test: /\.(ttf|woff|woff2|eot)$/,
+        test: /\.(woff|woff2|ttf|eot)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[hash][ext]',
+        },
+      },
+      {
+        test: /\.xml$/,
+        use: ['xml-loader'],
+      },
+      {
+        test: /\.csv$/,
+        use: ['csv-loader'],
       },
     ],
   },
