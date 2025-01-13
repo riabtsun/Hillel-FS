@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      div {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <title>Title</title>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(function () {
+        function createDiv() {
+          l = Math.round(Math.random() * 90);
+          $('<div></div>')
+            .css({
+              left: l + '%',
+            })
+            .appendTo('body')
+            .animate({
+              top: '100vh',
+            });
+        }
+        $(document).click(createDiv);
+      });
+
+      function reloadBlock() {
+        let divs = document.querySelectorAll('div');
+        for (let i = 0; i < divs.length; i++) {
+          a = Math.round(Math.random() * (self.innerWidth - 120));
+          b = Math.round(Math.random() * (self.innerHeight - 120));
+        }
+      }
+    </script>
+  </body>
+</html>

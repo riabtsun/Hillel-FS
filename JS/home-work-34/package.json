@@ -1,0 +1,19 @@
+{
+  "name": "home-work-34",
+  "version": "1.0.0",
+  "description": "test webpack project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "author": "Dmytro Riabtsun",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

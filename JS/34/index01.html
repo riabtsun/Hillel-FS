@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      div {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <title>Title</title>
+  </head>
+  <body>
+    <div></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(function () {
+        $('div').hover(
+          function () {
+            $(this).animate({
+              left: '+=50px',
+            });
+          },
+          function () {
+            $(this).animate({
+              top: '+=50px',
+            });
+          }
+        );
+      });
+    </script>
+    <!--    <script>-->
+    <!--      let div = document.querySelector('div');-->
+    <!--      let moveDiv = setInterval(() => {-->
+    <!--        for (let i = 0; i <= 5; i++) {-->
+    <!--          div.style.left += 10 + 'px';-->
+    <!--          div.style.top += 10 + 'px';-->
+    <!--          if (i === 5) {-->
+    <!--            clearInterval(moveDiv);-->
+    <!--          }-->
+    <!--        }-->
+    <!--      }, 1000);-->
+    <!--    </script>-->
+  </body>
+</html>

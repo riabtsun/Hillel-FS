@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      div {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <title>Title</title>
+  </head>
+  <body>
+    <div></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(function () {
+        $('div').click(function () {
+          $(this).animate(
+            {
+              left: '1000px',
+            },
+            10000,
+            function () {
+              $(this).animate(
+                {
+                  top: '500px',
+                },
+                5000,
+                function () {
+                  $(this).animate(
+                    {
+                      top: '100px',
+                      left: '100px',
+                    },
+                    1000,
+                    function () {
+                      $(this).css(
+                        {
+                          backgroundColor: 'green',
+                          transition: '2s all',
+                        },
+                        2000
+                      );
+                    }
+                  );
+                }
+              );
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
