@@ -15,7 +15,11 @@ type User = {
   age: number;
   isActive: boolean;
 };
-const createUser = (name: string, age: number, isActive = true): User => {
+const createUser = (
+  name: string,
+  age: number,
+  isActive: boolean = true
+): User => {
   console.log({ name, age, isActive });
   return { name, age, isActive };
 };
