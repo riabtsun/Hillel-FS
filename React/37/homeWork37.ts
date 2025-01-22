@@ -52,14 +52,17 @@ console.log(newPerson);
  *
  */
 
+/**
+В правильності виконання взагалі не впевнений 😅
+ */
 function LogMethodCalls(
   _target: any,
   propertyName: string,
   propertyDescriptor: PropertyDescriptor
-): PropertyDescriptor {
+): PropertyDescriptor | void {
   const originalMethod = propertyDescriptor.value;
   console.log(
-    'Calling "${propertyName}" with arguments: "${JSON.stringify(arguments)}"'
+    `Calling "${propertyName}" with arguments: "${JSON.stringify(arguments)}"`
   );
 
   propertyDescriptor.value = function (...args: any[]) {
@@ -73,23 +76,27 @@ function LogMethodCalls(
 
 class Calculator {
   constructor(
-    public num1: number,
-    public num2: number
+    public num1: number = 0,
+    public num2: number = 0
   ) {}
   @LogMethodCalls
-  add(): number {
+  add(a: number, b: number): number {
+    this.num1 = a;
+    this.num2 = b;
     return this.num1 + this.num2;
   }
   @LogMethodCalls
-  multiply(): number {
+  multiply(a: number, b: number): number {
+    this.num1 = a;
+    this.num2 = b;
     return this.num1 * this.num2;
   }
 }
-// const calculator = new Calculator()
-// // "Calling "add" with arguments: 2, 3"
-// console.log(calculator.add(2, 3)) // 5
-// // "Calling "multiply" with arguments: 3, 4"
-// console.log(calculator.multiply(3, 4)) // 12
+const calculator = new Calculator();
+// "Calling "add" with arguments: 2, 3"
+console.log(calculator.add(2, 3)); // 5
+// "Calling "multiply" with arguments: 3, 4"
+console.log(calculator.multiply(3, 4)); // 12
 
 /*
  * #3
