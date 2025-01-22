@@ -48,23 +48,3 @@ const getOrderStatus = (status: OrderStatus): string => {
       return 'Невідомий статус замовлення';
   }
 };
-const HomeWork36 = () => {
-  return (
-    <>
-      <h2>Task 1</h2>
-      <p>{sumArray([1, 2, 3, 4])}</p>
-      <p>{sumArray([])}</p>
-      <h2>Task 2</h2>
-      <p>User name is: {newUser.name}</p>
-      <p>User age is:{newUser.age}</p>
-      <p>Is user active: {newUser.isActive ? 'true' : 'false'}</p>
-      <h2>Task 3</h2>
-      <p>{getOrderStatus(OrderStatus.Pending)}</p>
-      <p>{getOrderStatus(OrderStatus.Shipped)}</p>
-      <p>{getOrderStatus(OrderStatus.Delivered)}</p>
-      <p>{getOrderStatus(OrderStatus.Cancelled)}</p>
-    </>
-  );
-};
-
-export default HomeWork36;
