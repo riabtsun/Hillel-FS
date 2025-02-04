@@ -1,0 +1,40 @@
+.cardWrap {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(211, 211, 211, 0.3);
+    border-radius: 8px;
+    width: 350px;
+}
+
+.cardWrap img {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.name {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.personInfo {
+    text-align: left;
+}
+
+.controls {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.controls button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FDB913;
+    color: #fff;
+    cursor: pointer;
+}
