@@ -14,11 +14,11 @@ mongoose
 
 const app: Express = express();
 
-app.use('/', express.json(), indexRouter);
-
 app.set('view engine', 'pug');
 app.set('views', path.normalize(__dirname + '/views'));
+app.use(express.static('/public'));
 
+app.use('/', express.json(), indexRouter);
 app.get('/', (_req: Request, res: Response) => {
   return res.render('index');
 });

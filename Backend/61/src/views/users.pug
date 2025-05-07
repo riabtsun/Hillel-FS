@@ -2,8 +2,13 @@ doctype html
 html
     head
         title 'users'
+        link(href='../public/users.css')
     body
         h1 'Users list'
-        ul
-          each user in usersList
-            li = user.first_name
+        ul.user-list
+            each user in usersList
+                li.user-card
+                    p.user-info= user.first_name
+                    p.user-info= user.last_name
+                    p.user-info= user.email
+                    p.user-info= user.gender
