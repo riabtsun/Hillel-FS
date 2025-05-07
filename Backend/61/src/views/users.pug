@@ -2,13 +2,20 @@ doctype html
 html
     head
         title 'users'
-        link(href='../public/users.css')
+        link(rel='stylesheet', href='/users.css')
     body
         h1 'Users list'
-        ul.user-list
-            each user in usersList
-                li.user-card
-                    p.user-info= user.first_name
-                    p.user-info= user.last_name
-                    p.user-info= user.email
-                    p.user-info= user.gender
+        if Array.isArray(usersList)
+            ul.user-list
+              each user in usersList
+                  li.user-card
+                      p.user-info= user.first_name
+                      p.user-info= user.last_name
+                      p.user-info= user.email
+                      p.user-info= user.gender
+        else
+            div.user-card
+                p.user-info= user.first_name
+                p.user-info= user.last_name
+                p.user-info= user.email
+                p.user-info= user.gender

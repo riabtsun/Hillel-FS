@@ -9,6 +9,7 @@
   "author": "Dmytro Riabtsun",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mongoose": "^8.14.1",
     "pug": "^3.0.3"

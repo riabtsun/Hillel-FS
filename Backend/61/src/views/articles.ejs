@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link rel='stylesheet' href='/articles.css'>
+    <title>
+        EJS
+    </title>
+</head>
+<body>
+<ul>
+    <% if(articlesList.length > 1) { %>
+        <% articlesList.forEach(function (item) { %>
+            <li>
+                <h2><%= item.title %></h2>
+                <p><%= item.createdAt %></p>
+                <p><%= item.author %></p>
+                <p><%= item.text %></p>
+            </li>
+        <% }) %>
+
+    <% }else { %>
+        <div>
+            <h2><%= article.title %></h2>
+            <p><%= article.createdAt %></p>
+            <p><%= article.author %></p>
+            <p><%= article.text %></p>
+        </div>
+    <% } %>
+
+</ul>
+</body>
+</html>
