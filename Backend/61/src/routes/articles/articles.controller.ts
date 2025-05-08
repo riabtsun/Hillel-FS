@@ -12,11 +12,13 @@ export const renderArticles = async (_req: Request, res: Response) => {
 export const renderArticleId = (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const article = articlesData.find((article) => article.id === Number(id));
-    if (!article) {
+    const articlesList = articlesData.find(
+      (article) => article.id === Number(id)
+    );
+    if (!articlesList) {
       res.status(404).json({ message: 'Article not found' });
     }
-    return res.render('articles', { articlesList: [article], article });
+    return res.render('articles', { articlesList });
   } catch (err) {
     res.status(500).json({ error: err });
   }

@@ -1,30 +1,99 @@
 import { Request, Response } from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import list from './users.service';
-import usersData from '../../mock/MOCK_DATA';
+import UserModel, { IUser, IUserDocument } from '../../models/User';
 
-export const listUsers = async (_req: Request, res: Response) => {
-  const users = await list();
-  res.status(200).json(users);
-};
+// export const listUsers = async (_req: Request, res: Response) => {
+//   const users = await list();
+//   res.status(200).json(users);
+// };
+//
+// export const renderUsers = async (_req: Request, res: Response) => {
+//   try {
+//     const users = await list();
+//     return res.render('users', { usersList: usersData });
+//   } catch (err) {
+//     res.status(500).json({ error: err });
+//   }
+// };
+//
+// export const renderUserId = (req: Request, res: Response) => {
+//   try {
+//     const { id } = req.params;
+//     const user = usersData.find((user) => user.id === Number(id));
+//     if (!user) {
+//       res.status(404).json({ message: 'User not found' });
+//     }
+//     return res.render('users', { user });
+//   } catch (err) {
+//     res.status(500).json({ error: err });
+//   }
+// };
 
-export const renderUsers = async (_req: Request, res: Response) => {
+export const register = async (req: Request, res: Response) => {
   try {
-    const users = await list();
-    return res.render('users', { usersList: usersData });
+    const { name, email, password } = req.body;
+
+    const existingUser = await UserModel.findOne({
+      email,
+    });
+
+    if (existingUser) {
+      res.status(400).json({ message: 'User already exists' });
+    }
+    const hash = await bcrypt.hash(password, 10);
+
+    const doc = new UserModel<IUser>({
+      email,
+      name,
+      password: hash,
+    });
+
+    const user: IUserDocument = await doc.save();
+
+    const { ...userData } = user._doc ?? {};
+
+    res.status(201).json({ ...userData });
   } catch (err) {
-    res.status(500).json({ error: err });
+    console.log(err);
+    res.status(500).json({ message: 'Registration error' });
   }
 };
 
-export const renderUserId = (req: Request, res: Response) => {
+export const login = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
-    const user = usersData.find((user) => user.id === Number(id));
-    if (!user) {
-      res.status(404).json({ message: 'User not found' });
+    if (!process.env.JWT_SECRET) {
+      throw new Error('JWT_SECRET не определен');
     }
-    return res.render('users', { user });
+    const user: IUserDocument = await UserModel.findOne({
+      email: req.body.email,
+    }).orFail();
+
+    if (!user) {
+      res.status(400).json({ message: 'User not found' });
+    }
+
+    const isValidPassword: boolean = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+
+    if (!isValidPassword) {
+      res.status(400).json({ message: 'Invalid login or password' });
+    }
+
+    const token = jwt.sign(
+      { email: user.email, role: 'user' },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: '1h',
+      }
+    );
+    const { ...userData } = user._doc ?? {};
+    res.json({ ...userData });
   } catch (err) {
-    res.status(500).json({ error: err });
+    console.log(err);
+    res.status(500).json({ message: 'Login error' });
   }
 };

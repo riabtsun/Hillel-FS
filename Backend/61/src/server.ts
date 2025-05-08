@@ -10,12 +10,15 @@ mongoose
   .then(() => console.log('DB Ok'))
   .catch((err) => console.log('DB error', err));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 // app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
 app.set('views', path.normalize(__dirname + '/views'));
 app.use(express.static(path.normalize(__dirname + '/public')));
 
-app.use('/', express.json(), indexRouter);
+app.use('/', indexRouter);
+
 app.get('/', (_req: Request, res: Response) => {
   return res.render('index');
 });

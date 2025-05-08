@@ -11,26 +11,27 @@
     </title>
 </head>
 <body>
-<ul>
-    <% if(articlesList.length > 1) { %>
+<% if(Array.isArray(articlesList)) { %>
+    <ul>
         <% articlesList.forEach(function (item) { %>
             <li>
-                <h2><%= item.title %></h2>
+                <h2>
+                    <a href='/articles/render/<%= item.id %>'><%= item.title %></a>
+                </h2>
                 <p><%= item.createdAt %></p>
                 <p><%= item.author %></p>
                 <p><%= item.text %></p>
             </li>
         <% }) %>
+    </ul>
+<% }else { %>
+    <div>
+        <h2><%= articlesList.title %></h2>
+        <p><%= articlesList.createdAt %></p>
+        <p><%= articlesList.author %></p>
+        <p><%= articlesList.text %></p>
+    </div>
+<% } %>
 
-    <% }else { %>
-        <div>
-            <h2><%= article.title %></h2>
-            <p><%= article.createdAt %></p>
-            <p><%= article.author %></p>
-            <p><%= article.text %></p>
-        </div>
-    <% } %>
-
-</ul>
 </body>
 </html>
