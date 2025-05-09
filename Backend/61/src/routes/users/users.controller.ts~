@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import 'dotenv/config';
 import UserModel, { IUser, IUserDocument } from '../../models/User';
 
 // export const listUsers = async (_req: Request, res: Response) => {
