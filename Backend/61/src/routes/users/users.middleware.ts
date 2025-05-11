@@ -2,10 +2,32 @@ import { Request, Response, NextFunction } from 'express';
 import 'dotenv/config';
 import jwt from 'jsonwebtoken';
 
-const validateToken = (req: Request, res: Response, next: NextFunction) => {
-  const authHeader = req.headers.authorization;
+interface CustomRequest extends Request {
+  user?: jwt.JwtPayload;
+}
 
-  if (!authHeader) return res.status(401).json({ message: 'Unauthorized' });
+export const validateToken = (
+  req: CustomRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  const authHeader = req.cookies.token;
 
-  const decoded = jwt.verify(authHeader, process.env.JWT_SECRET as string);
+  if (!authHeader) {
+    res.status(401).json({ message: 'Unauthorized' });
+    return;
+  }
+
+  try {
+    const decoded = jwt.verify(authHeader, process.env.JWT_SECRET as string);
+    console.log('TOKEN', decoded);
+
+    req.user = decoded as jwt.JwtPayload;
+
+    next();
+  } catch (err) {
+    console.log('error', err);
+    res.status(401).json({ message: 'Unauthorized' });
+    return;
+  }
 };
