@@ -1,28 +1,31 @@
 {
-  "name": "home-work-61",
+  "name": "63",
   "version": "1.0.0",
-  "description": "home work 61",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon -r dotenv/config src/server.ts"
+    "dev": "npx nodemon -r dotenv/config server.ts"
   },
-  "author": "Dmytro Riabtsun",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.1",
-    "bcryptjs": "^3.0.2",
-    "dotenv": "^16.5.0",
-    "ejs": "^3.1.10",
-    "pug": "^3.0.3"
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.1",
+    "@types/express-session": "^1.18.1",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.15.12",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
