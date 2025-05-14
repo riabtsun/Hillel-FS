@@ -1,10 +1,11 @@
 import express, { Express, NextFunction, Request, Response } from 'express';
-import { CustomError } from './api/errors/CustomError';
+import { statusCheck } from './middlewars/status.middleware';
+import MongoStore from 'connect-mongo';
 import * as http from 'node:http';
 import morgan from 'morgan';
 import configPassport from './config/passport';
 
-const port = process.env.PORT || 3000;
+const port: Number | String = process.env.PORT || 3000;
 
 import indexRouter from './api/index';
 
@@ -24,25 +25,17 @@ app.use(
     secret: 'my_secret_key',
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: 'mongodb://localhost:27017/sessions',
+      collectionName: 'sessions',
+    }),
   })
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-
-app.use(
-  '/',
-  (err: CustomError, req: Request, res: Response, next: NextFunction) => {
-    console.error('Error middleware:', err);
-    const statusCode = err.statusCode || 500;
-
-    res.status(statusCode).json({
-      message: err.message || 'Internal Server Error',
-      details: err.details || null,
-    });
-  }
-);
+app.use('/', statusCheck);
 
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
