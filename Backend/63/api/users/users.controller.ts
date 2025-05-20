@@ -1,4 +1,4 @@
-import { Request, RequestHandler, Response } from 'express';
+import { Request, RequestHandler, Response, NextFunction } from 'express';
 import { User } from './user.model';
 import passport from 'passport';
 
@@ -39,7 +39,6 @@ export const register: RequestHandler = async (req, res) => {
   }
 };
 
-import passport from 'passport';
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
