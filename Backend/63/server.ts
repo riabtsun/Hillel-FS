@@ -1,5 +1,6 @@
-import express, { Express, NextFunction, Request, Response } from 'express';
+import express, { Express } from 'express';
 import { statusCheck } from './middlewars/status.middleware';
+import { connectDB } from './config/database';
 import MongoStore from 'connect-mongo';
 import * as http from 'node:http';
 import morgan from 'morgan';
@@ -26,17 +27,20 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: 'mongodb://localhost:27017/sessions',
+      mongoUrl: 'mongodb://localhost:27017/pug',
       collectionName: 'sessions',
     }),
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/', statusCheck);
 
-server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+connectDB().then(() => {
+  server.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
 });

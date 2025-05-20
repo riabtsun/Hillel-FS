@@ -1,17 +1,22 @@
 import { PassportStatic, DoneCallback } from 'passport';
 
 const LocalStrategy = require('passport-local').Strategy;
-import users from '../api/users/users.mock';
+import { User } from '../api/users/user.model';
 
 export default (passport: PassportStatic) => {
   passport.use(
     new LocalStrategy(
       { usernameField: 'email', passwordField: 'password' },
-      (email: string, password: string | number, done: DoneCallback) => {
+      async (email: string, password: string, done: DoneCallback) => {
         try {
-          const user = users.find((user) => user.email === email);
+          const user = await User.findOne({ email });
 
-          if (!user || user.password !== password) {
+          if (!user) {
+            console.log('User not found');
+            return done(null, false);
+          }
+          const isMatch = await user.comparePassword(password);
+          if (!isMatch) {
             return done(null, false);
           }
           return done(null, user);
@@ -26,8 +31,8 @@ export default (passport: PassportStatic) => {
     done(null, user.email);
   });
 
-  passport.deserializeUser((email: string, done: DoneCallback) => {
-    const user = users.find((user) => user.email === email);
+  passport.deserializeUser(async (email: string, done: DoneCallback) => {
+    const user = await User.findOne({ email });
     done(null, user || false);
   });
 };

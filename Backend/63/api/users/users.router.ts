@@ -11,6 +11,7 @@ router.post(
   usersController.login as RequestHandler
 );
 
+router.get('/userslist', usersController.getAllUsers);
 router.get('/profile', usersController.getUserInfo);
 router.get('/logout', usersController.logout);
 
