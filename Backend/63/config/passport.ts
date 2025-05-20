@@ -7,14 +7,18 @@ export default (passport: PassportStatic) => {
   passport.use(
     new LocalStrategy(
       { usernameField: 'email', passwordField: 'password' },
-      async (email: string, password: string | number, done: DoneCallback) => {
+      async (email: string, password: string, done: DoneCallback) => {
         try {
           const user = await User.findOne({ email });
 
           if (!user) {
+            console.log('User not found');
             return done(null, false);
           }
-
+          const isMatch = await user.comparePassword(password);
+          if (!isMatch) {
+            return done(null, false);
+          }
           return done(null, user);
         } catch (err) {
           return done(err);

@@ -27,7 +27,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: 'mongodb://localhost:27017/sessions',
+      mongoUrl: 'mongodb://localhost:27017/pug',
       collectionName: 'sessions',
     }),
   })
