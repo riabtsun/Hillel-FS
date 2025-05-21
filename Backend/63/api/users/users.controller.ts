@@ -234,7 +234,7 @@ export const updateMany: RequestHandler = async (req, res) => {
     );
 
     res.status(200).json({
-      message: 'Users updated successfully',
+      message: 'Users updated successfully, property of dmytro riabtsun',
       modifiedCount: result.modifiedCount,
     });
     return;
