@@ -296,3 +296,75 @@ export const findUsersWithProjection: RequestHandler = async (req, res) => {
     return;
   }
 };
+
+export const getUsersWithCursor: RequestHandler = async (req, res) => {
+  try {
+    const cursor = await User.find().cursor();
+
+    const users = [];
+    const batchSize = parseInt(req.query.batchSize as string) || 10;
+
+
+    for (let doc = await cursor.next(); doc != null;
+         doc = await cursor.next()) {
+      users.push({ email: doc.email });
+      if (users.length === batchSize) {
+        break;
+      }
+    }
+
+    res.json({ users, hasMore: !(await cursor.next() === null) });
+    return;
+  } catch (err) {
+    res.status(400).json({
+      message: 'Something went wrong',
+      error: (err instanceof Error && err.message) || err,
+    });
+    return;
+  }
+};
+
+export const getUserStats: RequestHandler = async (_req, res) => {
+  try {
+    const stats = await User.aggregate([
+      {
+        $project: {
+          domain: { $split: ['$email', '@'] },
+        },
+      },
+      {
+        $project: {
+          domain: { $arrayElemAt: ['$domain', 1] },
+        },
+      },
+      {
+        $group: {
+          _id: '$domain',
+          users_count: { $sum: 1 },
+        },
+      },
+      {
+        $sort: { users_count: -1 },
+      },
+      {
+        $project: {
+          _id: 0,
+          domain: '$_id',
+          users_count: 1,
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      message: 'Domain users statistics ',
+      stats,
+    });
+    return;
+  } catch (err) {
+    res.status(400).json({
+      message: 'Ошибка при получении статистики',
+      error: (err instanceof Error && err.message) || err,
+    });
+    return;
+  }
+};

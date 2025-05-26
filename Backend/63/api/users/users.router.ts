@@ -1,6 +1,7 @@
 import express, { RequestHandler } from 'express';
 import * as usersController from './users.controller';
 import passport from 'passport';
+import { getUsersWithCursor } from './users.controller';
 
 const router = express.Router();
 
@@ -24,5 +25,8 @@ router.get('/userslist', usersController.getAllUsers);
 router.get('/profile', usersController.getUserInfo);
 router.get('/logout', usersController.logout);
 router.get('/projection', usersController.findUsersWithProjection);
+
+router.get('/cursor', usersController.getUsersWithCursor);
+router.get('/stats', usersController.getUserStats);
 
 export default router;
